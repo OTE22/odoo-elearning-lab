@@ -1,0 +1,1 @@
+# Extra Python packages needed by addons in ./addons (none yet).

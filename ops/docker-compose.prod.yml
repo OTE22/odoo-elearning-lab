@@ -1,0 +1,20 @@
+# Production overrides. Use together with the base file:
+#   docker compose -f docker-compose.yml -f ops/docker-compose.prod.yml up -d --build
+services:
+  odoo:
+    # No public port: only Nginx talks to Odoo.
+    ports: !reset []
+    command: ["odoo", "--proxy-mode", "--workers=3", "--max-cron-threads=1", "--list-db=False"]
+    volumes: !override
+      - odoo-data:/var/lib/odoo
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on: [odoo]
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ops/nginx/odoo.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ops/nginx/certs:/etc/nginx/certs:ro

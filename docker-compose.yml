@@ -1,0 +1,42 @@
+# Local development stack: Odoo 17 + PostgreSQL 16.
+# Start:  cp .env.example .env && make up && make init
+name: odoo-elearning-lab
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: ${POSTGRES_USER:-odoo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-odoo}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  odoo:
+    build: .
+    image: odoo-elearning-lab:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      HOST: db
+      USER: ${POSTGRES_USER:-odoo}
+      PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    ports:
+      - "${ODOO_PORT:-8069}:8069"
+    volumes:
+      - odoo-data:/var/lib/odoo
+      # Live-mount addons so code edits show without rebuilding the image.
+      - ./addons:/mnt/extra-addons
+    command: ["odoo", "--dev=xml"]
+
+volumes:
+  db-data:
+  odoo-data:

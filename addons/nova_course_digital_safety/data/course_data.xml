@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Course: الأمان الرقمي للمؤسسات الثقافية ===== -->
+    <record id="channel" model="slide.channel">
+        <field name="name">الأمان الرقمي للمؤسسات الثقافية</field>
+        <field name="channel_type">training</field>
+        <field name="enroll">public</field>
+        <field name="visibility">public</field>
+        <field name="description_short" type="html"><p dir="rtl">احمِ حساباتك وملفات مؤسستك من أكثر المخاطر شيوعاً في حوالي 55 دقيقة.</p></field>
+        <field name="description" type="html"><div dir="rtl"><p>دورة عملية قصيرة للعاملين في المؤسسات والمجموعات الثقافية. تتعلّم فيها كيف تحمي حساباتك، وتكتشف رسائل التصيّد، وتشارك الملفات وتحفظ نسخاً احتياطية بأمان، دون الحاجة إلى خبرة تقنية.</p></div></field>
+        <field name="image_1920" type="base64" file="nova_course_digital_safety/static/img/cover.png"/>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <!-- Section 1: الوحدة 1: حماية الحسابات -->
+    <record id="section_1" model="slide.slide">
+        <field name="name">الوحدة 1: حماية الحسابات</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">1</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_1_1" model="slide.slide">
+        <field name="name">لماذا تُستهدف المؤسسات الصغيرة؟</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">2</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.1167</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="True"/>
+        <field name="description">المخاطر الأكثر شيوعاً ولماذا لا يكفي أن تكون «صغيراً».</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>يظنّ كثيرون أن المهاجمين يستهدفون الشركات الكبيرة فقط. في الواقع، المؤسسات الصغيرة هدف سهل لأنها غالباً بلا فريق تقني، وتستخدم كلمات مرور ضعيفة، وتحفظ بيانات حساسة عن الفنانين والمستفيدين والمانحين.</p>
+<h3>أكثر ثلاثة مخاطر شيوعاً</h3>
+<ol><li>سرقة الحسابات بسبب كلمات مرور ضعيفة أو مكرّرة</li><li>رسائل التصيّد التي تخدعك لإدخال كلمة المرور أو تحويل أموال</li><li>فقدان الملفات بسبب عطل أو سرقة جهاز دون نسخة احتياطية</li></ol>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (3 دقائق)</p><p>اكتب قائمة بالحسابات الأهم لمؤسستك: البريد، وسائل التواصل، الحساب المصرفي، التخزين السحابي.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_1_2" model="slide.slide">
+        <field name="name">كلمات المرور والتحقّق بخطوتين</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">3</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.2</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">مدير كلمات المرور والتحقّق بخطوتين: أهم خطوتين تحميان حساباتك.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<h3>قاعدتان تكفيان لمعظم الحالات</h3>
+<ol><li><b>كلمة مرور مختلفة وطويلة لكل حساب</b>، ويحفظها لك مدير كلمات مرور موثوق.</li><li><b>تفعيل التحقّق بخطوتين</b> على البريد ووسائل التواصل، ويُفضَّل تطبيق مصادقة بدلاً من الرسائل النصية.</li></ol>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">عبارة مرور بدل كلمة مرور</p><p>أربع كلمات عشوائية مع رقم أسهل للتذكّر وأصعب للكسر من كلمة قصيرة معقّدة.</p></div>
+<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">لا تفعل</p><ul><li>مشاركة كلمة مرور حساب المؤسسة عبر واتساب</li><li>استخدام كلمة المرور نفسها للبريد ووسائل التواصل</li></ul></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>فعّل التحقّق بخطوتين على بريدك الإلكتروني الآن، ثم ضع علامة على هذا الدرس كمكتمل.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_1_2_q1" model="slide.question">
+        <field name="question">ما أفضل طريقة لإدارة كلمات مرور فريق صغير؟</field>
+        <field name="sequence">1</field>
+        <field name="slide_id" ref="slide_1_2"/>
+    </record>
+    <record id="slide_1_2_q1_a1" model="slide.answer">
+        <field name="text_value">مدير كلمات مرور مع خزنة مشتركة</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_1_2_q1"/>
+        <field name="comment">يحفظ كلمات مختلفة وقوية ويتيح مشاركتها بأمان.</field>
+    </record>
+    <record id="slide_1_2_q1_a2" model="slide.answer">
+        <field name="text_value">ملف Excel على سطح المكتب</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_1_2_q1"/>
+        <field name="comment">يسهل سرقته أو فقدانه.</field>
+    </record>
+    <record id="slide_1_2_q1_a3" model="slide.answer">
+        <field name="text_value">كلمة مرور واحدة قوية لكل الحسابات</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_1_2_q1"/>
+        <field name="comment">إذا سُرقت مرة واحدة سقطت كل الحسابات.</field>
+    </record>
+
+    <!-- Section 2: الوحدة 2: الرسائل والملفات -->
+    <record id="section_2" model="slide.slide">
+        <field name="name">الوحدة 2: الرسائل والملفات</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">4</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_2_1" model="slide.slide">
+        <field name="name">كيف تكتشف رسائل التصيّد</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">5</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.2</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">علامات بسيطة تكشف معظم الرسائل الاحتيالية.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>رسالة التصيّد تحاول أن تدفعك إلى التصرّف بسرعة: الضغط على رابط، أو تنزيل ملف، أو تحويل مبلغ.</p>
+<h3>خمس علامات تحذيرية</h3>
+<ul><li>عنوان مرسل يشبه عنواناً معروفاً مع اختلاف بسيط</li><li>لهجة مستعجلة أو تهديد بإغلاق الحساب</li><li>رابط لا يطابق اسم الموقع عند تمرير المؤشر فوقه</li><li>طلب كلمة مرور أو رمز تحقّق</li><li>تغيير مفاجئ في رقم حساب مصرفي للدفع</li></ul>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">القاعدة الذهبية</p><p>إذا طُلب منك مال أو كلمة مرور، تحقّق عبر قناة أخرى: اتصل بالشخص على رقم تعرفه.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_2_2" model="slide.slide">
+        <field name="name">مشاركة الملفات والنسخ الاحتياطي</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">6</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.2</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">قاعدة 3-2-1 ومشاركة الملفات بصلاحيات محدّدة.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<h3>قاعدة 3-2-1 للنسخ الاحتياطي</h3>
+<ul><li><b>3</b> نسخ من الملفات المهمة</li><li>على <b>2</b> نوعين مختلفين من التخزين</li><li><b>1</b> منها خارج المكتب أو في السحابة</li></ul>
+<h3>مشاركة الملفات بأمان</h3>
+<ul><li>شارك مع أشخاص محدّدين بدل «أي شخص لديه الرابط»</li><li>راجع الصلاحيات كل ثلاثة أشهر وأزل المتطوّعين السابقين</li><li>لا ترسل بيانات المستفيدين في مرفقات بريد عادية</li></ul>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>افتح مجلد المؤسسة على التخزين السحابي وتحقّق: من لديه صلاحية الوصول؟</p></div>
+</div></field>
+    </record>
+
+    <!-- Section 3: الوحدة 3: التقييم -->
+    <record id="section_3" model="slide.slide">
+        <field name="name">الوحدة 3: التقييم</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">7</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_3_1" model="slide.slide">
+        <field name="name">الاختبار النهائي</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">8</field>
+        <field name="slide_category">quiz</field>
+        <field name="completion_time">0.1667</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">أربعة أسئلة لمراجعة الدورة.</field>
+    </record>
+
+    <record id="slide_3_1_q1" model="slide.question">
+        <field name="question">وصلتك رسالة من «المدير» يطلب تحويل مبلغ عاجل إلى حساب جديد. ماذا تفعل؟</field>
+        <field name="sequence">1</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q1_a1" model="slide.answer">
+        <field name="text_value">أتصل بالمدير على رقم أعرفه للتأكّد</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q1"/>
+        <field name="comment">التحقّق عبر قناة أخرى يكشف معظم عمليات الاحتيال.</field>
+    </record>
+    <record id="slide_3_1_q1_a2" model="slide.answer">
+        <field name="text_value">أحوّل المبلغ لأنه عاجل</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q1"/>
+        <field name="comment">الاستعجال علامة تحذيرية شائعة.</field>
+    </record>
+    <record id="slide_3_1_q1_a3" model="slide.answer">
+        <field name="text_value">أردّ على الرسالة نفسها لأسأل</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q1"/>
+        <field name="comment">قد يكون المهاجم هو من يردّ.</field>
+    </record>
+
+    <record id="slide_3_1_q2" model="slide.question">
+        <field name="question">ما الذي يعنيه التحقّق بخطوتين؟</field>
+        <field name="sequence">2</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q2_a1" model="slide.answer">
+        <field name="text_value">رمز إضافي بعد كلمة المرور</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q2"/>
+        <field name="comment">حتى لو سُرقت كلمة المرور يبقى الحساب محمياً.</field>
+    </record>
+    <record id="slide_3_1_q2_a2" model="slide.answer">
+        <field name="text_value">كلمتا مرور مختلفتان</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q2"/>
+        <field name="comment">ليس هذا المقصود.</field>
+    </record>
+    <record id="slide_3_1_q2_a3" model="slide.answer">
+        <field name="text_value">تغيير كلمة المرور مرتين سنوياً</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q2"/>
+        <field name="comment">هذه ممارسة مختلفة.</field>
+    </record>
+
+    <record id="slide_3_1_q3" model="slide.question">
+        <field name="question">حسب قاعدة 3-2-1، كم نسخة يجب أن تكون خارج المكتب؟</field>
+        <field name="sequence">3</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q3_a1" model="slide.answer">
+        <field name="text_value">نسخة واحدة على الأقل</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q3"/>
+        <field name="comment">لحماية الملفات من حريق أو سرقة.</field>
+    </record>
+    <record id="slide_3_1_q3_a2" model="slide.answer">
+        <field name="text_value">لا شيء</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q3"/>
+        <field name="comment">كل النسخ في مكان واحد تعني خطراً واحداً.</field>
+    </record>
+    <record id="slide_3_1_q3_a3" model="slide.answer">
+        <field name="text_value">ثلاث نسخ</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q3"/>
+        <field name="comment">يكفي نسخة واحدة خارج المكتب.</field>
+    </record>
+
+    <record id="slide_3_1_q4" model="slide.question">
+        <field name="question">أفضل طريقة لمشاركة ملف فيه بيانات مستفيدين:</field>
+        <field name="sequence">4</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q4_a1" model="slide.answer">
+        <field name="text_value">مشاركة مع أشخاص محدّدين بصلاحيات واضحة</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q4"/>
+        <field name="comment">يحدّ من الوصول غير المقصود.</field>
+    </record>
+    <record id="slide_3_1_q4_a2" model="slide.answer">
+        <field name="text_value">رابط مفتوح لأي شخص</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q4"/>
+        <field name="comment">قد يصل الرابط إلى أي أحد.</field>
+    </record>
+    <record id="slide_3_1_q4_a3" model="slide.answer">
+        <field name="text_value">مرفق في مجموعة واتساب</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q4"/>
+        <field name="comment">يصعب التحكم بمن يحتفظ بنسخة.</field>
+    </record>
+
+</odoo>

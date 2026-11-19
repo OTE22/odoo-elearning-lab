@@ -1,0 +1,10 @@
+.env
+*.pyc
+__pycache__/
+backups/
+*.dump
+*.zip
+.DS_Store
+.vscode/
+.idea/
+ops/nginx/certs/*.pem

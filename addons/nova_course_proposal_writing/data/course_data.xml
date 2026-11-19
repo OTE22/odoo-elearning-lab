@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Course: كتابة مقترح مشروع ثقافي ناجح ===== -->
+    <record id="channel" model="slide.channel">
+        <field name="name">كتابة مقترح مشروع ثقافي ناجح</field>
+        <field name="channel_type">training</field>
+        <field name="enroll">public</field>
+        <field name="visibility">public</field>
+        <field name="description_short" type="html"><p dir="rtl">حوّل فكرتك الثقافية إلى مقترح واضح ومقنع في حوالي 70 دقيقة.</p></field>
+        <field name="description" type="html"><div dir="rtl"><p>دورة ذاتية قصيرة للفنانين والمجموعات والمؤسسات الثقافية الصغيرة. تتعلّم فيها خطوة بخطوة كيف تحدّد الحاجة، وتكتب أهدافاً ذكية، وتربط الأنشطة بالنتائج، وتُعدّ ميزانية وجدولاً زمنياً واقعيين.</p><p>كل درس يتضمّن مثالاً من الواقع وتمريناً تطبيقياً، وتنتهي الدورة باختبار نهائي.</p></div></field>
+        <field name="image_1920" type="base64" file="nova_course_proposal_writing/static/img/cover.png"/>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <!-- Section 1: الوحدة 1: الأساسيات -->
+    <record id="section_1" model="slide.slide">
+        <field name="name">الوحدة 1: الأساسيات</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">1</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_1_1" model="slide.slide">
+        <field name="name">ما هو المقترح ولماذا يهمّ؟</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">2</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.1333</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="True"/>
+        <field name="description">ما الذي تبحث عنه الجهة المانحة، والأجزاء الأساسية لأي مقترح.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<h3>لماذا تكتب مقترحاً؟</h3>
+<p>المقترح هو الوثيقة التي تقنع جهة مانحة أو شريكاً بأن فكرتك تستحق الدعم. هو ليس وصفاً لأحلامك، بل خطة واضحة تجيب عن سؤال واحد: ما المشكلة، وكيف ستساهم في حلّها؟</p>
+<h3>الأجزاء الأساسية لأي مقترح</h3>
+<ol><li><b>ملخّص المشروع:</b> فقرة واحدة تشرح الفكرة كاملة.</li><li><b>الحاجة أو المشكلة:</b> لماذا هذا المشروع مهم الآن، ولمن؟</li><li><b>الأهداف:</b> ما الذي ستحقّقه بشكل قابل للقياس.</li><li><b>الأنشطة:</b> ماذا ستفعل بالضبط لتحقيق الأهداف.</li><li><b>النتائج المتوقّعة وطريقة التقييم.</b></li><li><b>الميزانية والجدول الزمني.</b></li><li><b>الفريق والشركاء.</b></li></ol>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">قاعدة ذهبية</p><p>اقرأ دعوة التقديم مرتين قبل أن تكتب. استخدم كلمات الجهة المانحة نفسها، وأجب عن كل سؤال تطرحه بالترتيب.</p></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (3 دقائق)</p><p>اكتب في ثلاثة أسطر: ما فكرة مشروعك؟ ولمن هو؟ ولماذا الآن؟</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_1_2" model="slide.slide">
+        <field name="name">قصة من الميدان: مشروع مسرح مجتمعي</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">3</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.0667</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">كيف تحوّلت فكرة بسيطة إلى مشروع مموَّل.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>بدأت مجموعة شبابية صغيرة في صيدا بفكرة: ورش مسرحية لليافعين في الأحياء التي تفتقر إلى مساحات ثقافية. في المحاولة الأولى رُفض المقترح لأنه كان عامّاً: «دعم الشباب من خلال الفن».</p>
+<p>في المحاولة الثانية أعادت المجموعة الكتابة: حدّدت الحي، وعدد المشاركين، وعدد الورش، والمدة، ونتيجة واضحة هي عرض جماهيري في نهاية المشروع. هذه المرة حصلت على التمويل.</p>
+<div style="background:#fff8ec;border:1px solid #f6d9a8;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#5a4320;font-weight:bold;margin:0 0 6px;">ماذا تغيّر؟</p><ul><li>مشكلة موثّقة بأرقام بسيطة من الحي</li><li>أهداف محدّدة وقابلة للقياس</li><li>ميزانية صغيرة وواقعية تتناسب مع حجم الفريق</li></ul></div>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">ملاحظة للمصمّم</p><p>في الدورة الحقيقية يمكن أن يكون هذا الدرس فيديو قصيراً مضغوطاً مع هذا النص كبديل مكتوب.</p></div>
+</div></field>
+    </record>
+
+    <!-- Section 2: الوحدة 2: بناء المقترح -->
+    <record id="section_2" model="slide.slide">
+        <field name="name">الوحدة 2: بناء المقترح</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">4</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_2_1" model="slide.slide">
+        <field name="name">صياغة أهداف ذكية (SMART)</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">5</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.25</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">اختبر كل هدف بخمسة معايير بسيطة.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>الهدف الجيّد يخبر الجهة المانحة بدقّة ماذا ستُنجز، ولمن، ومتى، وكيف ستعرف أنك نجحت. استخدم المعايير الخمسة التالية لاختبار كل هدف تكتبه.</p>
+<table style="width:100%;border-collapse:separate;border-spacing:6px;color:#fff;text-align:center;"><tr><td style="background:#714B67;border-radius:10px;padding:12px;"><b style="font-size:26px;">S</b><br/>محدَّد</td><td style="background:#8f5f7f;border-radius:10px;padding:12px;"><b style="font-size:26px;">M</b><br/>قابل للقياس</td><td style="background:#017E84;border-radius:10px;padding:12px;"><b style="font-size:26px;">A</b><br/>قابل للتحقيق</td><td style="background:#1f9a8a;border-radius:10px;padding:12px;"><b style="font-size:26px;">R</b><br/>مرتبط بالحاجة</td><td style="background:#d98a1f;border-radius:10px;padding:12px;"><b style="font-size:26px;">T</b><br/>محدَّد زمنياً</td></tr></table>
+<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">✕ هدف غير واضح</p><p>«دعم الشباب في المدينة من خلال الفن.»</p></div>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">✓ هدف ذكي: مثال من الواقع</p><p>«تنظيم 6 ورش مسرحية لـ 60 شاباً وشابة في صيدا خلال 4 أشهر، تنتهي بعرض جماهيري واحد.»</p></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين تطبيقي (5 دقائق)</p><p>اكتب هدفاً واحداً لمشروعك، ثم راجعه: هل يجيب عن ماذا؟ لمن؟ أين؟ متى؟ كم؟</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_2_1_q1" model="slide.question">
+        <field name="question">أيّ عنصر ينقص هذا الهدف: «تنظيم ورش رسم للأطفال في طرابلس»؟</field>
+        <field name="sequence">1</field>
+        <field name="slide_id" ref="slide_2_1"/>
+    </record>
+    <record id="slide_2_1_q1_a1" model="slide.answer">
+        <field name="text_value">العدد والمدة الزمنية</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_2_1_q1"/>
+        <field name="comment">صحيح: لا نعرف كم ورشة، ولا لكم طفلاً، ولا متى.</field>
+    </record>
+    <record id="slide_2_1_q1_a2" model="slide.answer">
+        <field name="text_value">المكان</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_2_1_q1"/>
+        <field name="comment">المكان موجود: طرابلس.</field>
+    </record>
+    <record id="slide_2_1_q1_a3" model="slide.answer">
+        <field name="text_value">الفئة المستهدفة</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_2_1_q1"/>
+        <field name="comment">الفئة موجودة: الأطفال.</field>
+    </record>
+    <record id="slide_2_1_q1_a4" model="slide.answer">
+        <field name="text_value">لا شيء، الهدف ذكي</field>
+        <field name="sequence">4</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_2_1_q1"/>
+        <field name="comment">ينقصه العدد والمدة، لذلك لا يمكن قياسه.</field>
+    </record>
+
+    <record id="slide_2_2" model="slide.slide">
+        <field name="name">تحديد الحاجة وفكرة المشروع</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">6</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.25</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">كيف تثبت أن المشكلة حقيقية ومهمة.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>الجهة المانحة لا تموّل أفكاراً جميلة فقط، بل تموّل حلولاً لمشكلات حقيقية. قسم «الحاجة» هو المكان الذي تثبت فيه ذلك.</p>
+<h3>ثلاثة أسئلة يجب أن يجيب عنها هذا القسم</h3>
+<ol><li>من المتأثّر بالمشكلة؟ وكم عددهم تقريباً؟</li><li>ما الدليل؟ (أرقام، شهادات، دراسة صغيرة، ملاحظاتك الميدانية)</li><li>لماذا أنت أو فريقك الأقدر على معالجتها؟</li></ol>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">مصادر سهلة للأدلة</p><ul><li>استبيان قصير لعشرين شخصاً من الفئة المستهدفة</li><li>تقارير البلدية أو المنظمات المحلية</li><li>عدد المساحات الثقافية في المنطقة</li></ul></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>اكتب فقرة من ثلاث جمل عن المشكلة التي يعالجها مشروعك، مع دليل واحد على الأقل.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_2_3" model="slide.slide">
+        <field name="name">الميزانية والجدول الزمني</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">7</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.25</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">ميزانية بسيطة وواقعية مرتبطة بالأنشطة.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>الميزانية هي قصة مشروعك بالأرقام. كل بند فيها يجب أن يرتبط بنشاط ذكرته في المقترح.</p>
+<table style="width:100%;border-collapse:collapse;" border="1" cellpadding="8"><tr style="background:#f4f1f4;"><th>البند</th><th>الوحدة</th><th>العدد</th><th>كلفة الوحدة ($)</th><th>المجموع ($)</th></tr><tr><td>مدرّب مسرح</td><td>ورشة</td><td>6</td><td>150</td><td>900</td></tr><tr><td>إيجار قاعة</td><td>يوم</td><td>7</td><td>50</td><td>350</td></tr><tr><td>مواد وأزياء</td><td>مقطوع</td><td>1</td><td>300</td><td>300</td></tr><tr><td>العرض النهائي</td><td>مقطوع</td><td>1</td><td>450</td><td>450</td></tr><tr style="font-weight:bold;"><td colspan="4">المجموع</td><td>2,000</td></tr></table>
+<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">أخطاء شائعة</p><ul><li>بنود بلا شرح</li><li>تكاليف إدارية مرتفعة جداً</li><li>جدول زمني لا يترك وقتاً للتحضير والتقييم</li></ul></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>انسخ الجدول أعلاه واملأه لمشروعك. هل يرتبط كل بند بنشاط واضح؟</p></div>
+</div></field>
+    </record>
+
+    <!-- Section 3: الوحدة 3: التقييم -->
+    <record id="section_3" model="slide.slide">
+        <field name="name">الوحدة 3: التقييم</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">8</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_3_1" model="slide.slide">
+        <field name="name">الاختبار النهائي</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">9</field>
+        <field name="slide_category">quiz</field>
+        <field name="completion_time">0.1667</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">خمسة أسئلة لمراجعة ما تعلّمته في الدورة.</field>
+    </record>
+
+    <record id="slide_3_1_q1" model="slide.question">
+        <field name="question">أيٌّ من الأهداف التالية يُعدّ هدفاً ذكياً (SMART)؟</field>
+        <field name="sequence">1</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q1_a1" model="slide.answer">
+        <field name="text_value">رفع الوعي الثقافي في المجتمع المحلي</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q1"/>
+        <field name="comment">عامّ جداً ولا يمكن قياسه.</field>
+    </record>
+    <record id="slide_3_1_q1_a2" model="slide.answer">
+        <field name="text_value">تنظيم 6 ورش مسرحية لـ 60 شاباً في صيدا خلال 4 أشهر</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q1"/>
+        <field name="comment">يحدّد النشاط والفئة والمكان والمدة.</field>
+    </record>
+    <record id="slide_3_1_q1_a3" model="slide.answer">
+        <field name="text_value">دعم الفنانين الشباب قدر الإمكان</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q1"/>
+        <field name="comment">لا يوجد رقم أو مدة.</field>
+    </record>
+    <record id="slide_3_1_q1_a4" model="slide.answer">
+        <field name="text_value">إنتاج محتوى فني متميّز</field>
+        <field name="sequence">4</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q1"/>
+        <field name="comment">«متميّز» صفة لا يمكن قياسها.</field>
+    </record>
+
+    <record id="slide_3_1_q2" model="slide.question">
+        <field name="question">ما وظيفة قسم «الحاجة» في المقترح؟</field>
+        <field name="sequence">2</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q2_a1" model="slide.answer">
+        <field name="text_value">إثبات أن المشكلة حقيقية ومهمة</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q2"/>
+        <field name="comment">صحيح، مع أدلة وأرقام.</field>
+    </record>
+    <record id="slide_3_1_q2_a2" model="slide.answer">
+        <field name="text_value">عرض السيرة الذاتية للفريق</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q2"/>
+        <field name="comment">هذا مكانه قسم الفريق.</field>
+    </record>
+    <record id="slide_3_1_q2_a3" model="slide.answer">
+        <field name="text_value">تفصيل الميزانية</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q2"/>
+        <field name="comment">للميزانية قسم مستقل.</field>
+    </record>
+
+    <record id="slide_3_1_q3" model="slide.question">
+        <field name="question">كل بند في الميزانية يجب أن...</field>
+        <field name="sequence">3</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q3_a1" model="slide.answer">
+        <field name="text_value">يرتبط بنشاط مذكور في المقترح</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q3"/>
+        <field name="comment">هذا ما يجعل الميزانية مقنعة.</field>
+    </record>
+    <record id="slide_3_1_q3_a2" model="slide.answer">
+        <field name="text_value">يكون مرتفعاً لضمان الاحتياط</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q3"/>
+        <field name="comment">الميزانيات المبالغ فيها تُضعف الثقة.</field>
+    </record>
+    <record id="slide_3_1_q3_a3" model="slide.answer">
+        <field name="text_value">يُكتب دون شرح</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q3"/>
+        <field name="comment">الشرح المختصر يساعد المقيّم.</field>
+    </record>
+
+    <record id="slide_3_1_q4" model="slide.question">
+        <field name="question">ما أول خطوة قبل كتابة أي مقترح؟</field>
+        <field name="sequence">4</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q4_a1" model="slide.answer">
+        <field name="text_value">قراءة دعوة التقديم بعناية</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q4"/>
+        <field name="comment">لتجيب عن كل ما تطلبه الجهة المانحة.</field>
+    </record>
+    <record id="slide_3_1_q4_a2" model="slide.answer">
+        <field name="text_value">إعداد الميزانية</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q4"/>
+        <field name="comment">الميزانية تأتي بعد تحديد الأنشطة.</field>
+    </record>
+    <record id="slide_3_1_q4_a3" model="slide.answer">
+        <field name="text_value">تصميم الشعار</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q4"/>
+        <field name="comment">ليس ضرورياً للمقترح.</field>
+    </record>
+
+    <record id="slide_3_1_q5" model="slide.question">
+        <field name="question">لماذا رُفض مقترح المسرح المجتمعي في المحاولة الأولى؟</field>
+        <field name="sequence">5</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q5_a1" model="slide.answer">
+        <field name="text_value">لأنه كان عامّاً وغير قابل للقياس</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q5"/>
+        <field name="comment">صحيح، وهذا ما تغيّر في المحاولة الثانية.</field>
+    </record>
+    <record id="slide_3_1_q5_a2" model="slide.answer">
+        <field name="text_value">لأن الميزانية كانت صغيرة</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q5"/>
+        <field name="comment">الميزانية الواقعية نقطة قوة.</field>
+    </record>
+    <record id="slide_3_1_q5_a3" model="slide.answer">
+        <field name="text_value">لأن الفريق كان شبابياً</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q5"/>
+        <field name="comment">لم يكن ذلك سبب الرفض.</field>
+    </record>
+
+</odoo>
