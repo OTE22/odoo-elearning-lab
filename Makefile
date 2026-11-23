@@ -3,7 +3,7 @@
 export
 
 DB      ?= $(ODOO_DB)
-MODULES := nova_course_proposal_writing,nova_course_digital_safety
+MODULES := nova_course_proposal_writing,nova_course_digital_safety,nova_course_ai_cultural_work
 COMPOSE := docker compose
 ODOO    := $(COMPOSE) run --rm odoo odoo
 
@@ -29,7 +29,7 @@ update: ## Re-load course data after you edit the XML
 	$(ODOO) -d $(DB) -u $(MODULES) --stop-after-init
 
 test: ## Run the module tests in a throwaway database
-	$(ODOO) -d test_$(DB) -i $(MODULES) --test-enable --test-tags=/nova_course_proposal_writing,/nova_course_digital_safety --without-demo=all --stop-after-init --log-level=test
+	$(ODOO) -d test_$(DB) -i $(MODULES) --test-enable --test-tags=/nova_course_proposal_writing,/nova_course_digital_safety,/nova_course_ai_cultural_work --without-demo=all --stop-after-init --log-level=test
 	$(COMPOSE) exec db dropdb -U $(POSTGRES_USER) --if-exists test_$(DB)
 
 shell: ## Open an Odoo Python shell on the database

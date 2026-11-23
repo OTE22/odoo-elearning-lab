@@ -14,6 +14,8 @@ A hands-on learning project: run **Odoo 17 eLearning** in Docker and ship **Arab
 | 2 | **Course module: Writing a Cultural Project Proposal** (`كتابة مقترح مشروع ثقافي ناجح`) | Odoo module structure, XML data, courses, lessons, quizzes, RTL HTML | [docs/02-course-module.md](docs/02-course-module.md) |
 | 3 | **Course module: Digital Safety for Cultural Organisations** (`الأمان الرقمي للمؤسسات الثقافية`) | Reusing the pattern, writing Odoo unit tests | [docs/03-second-course-and-tests.md](docs/03-second-course-and-tests.md) |
 | 4 | **Ops toolkit** | Backups and restore, Nginx + HTTPS, production workers, GitHub Actions CI | [docs/04-ops-toolkit.md](docs/04-ops-toolkit.md) |
+| + | **Publish live** | Put the courses on a public link (server + HTTPS, or Odoo Online) | [docs/05-publish-live.md](docs/05-publish-live.md) |
+| + | **Course module: AI in Cultural Work** (`الذكاء الاصطناعي في العمل الثقافي`) | A third course built with the same pattern: prompting, drafting, translation, privacy | `addons/nova_course_ai_cultural_work/` |
 
 ## Quick start
 
@@ -23,7 +25,7 @@ Requirements: Docker with Compose v2.24+, `make`.
 git clone <this-repo> odoo-elearning-lab && cd odoo-elearning-lab
 cp .env.example .env          # then edit the passwords
 make up                       # build the image, start Odoo + Postgres
-make init                     # create the database in Arabic and install both courses
+make init                     # create the database in Arabic and install the three courses
 ```
 
 Open http://localhost:8069, log in with `admin` / `admin`, change the password, then go to **Website → Courses**.
@@ -47,7 +49,8 @@ Open http://localhost:8069, log in with `admin` / `admin`, change the password, 
 ├── Makefile                    # Shortcuts (make help)
 ├── addons/
 │   ├── nova_course_proposal_writing/   # Course 1 as an Odoo module
-│   └── nova_course_digital_safety/     # Course 2 as an Odoo module
+│   ├── nova_course_digital_safety/     # Course 2 as an Odoo module
+│   └── nova_course_ai_cultural_work/   # Course 3 as an Odoo module
 ├── ops/
 │   ├── scripts/                # backup.sh, restore.sh, healthcheck.sh
 │   ├── nginx/odoo.conf         # reverse proxy with HTTPS and websockets
@@ -61,8 +64,9 @@ Open http://localhost:8069, log in with `admin` / `admin`, change the password, 
 | Course page | Lesson |
 |---|---|
 | ![](docs/screenshots/02-course-page.png) | ![](docs/screenshots/03-lesson.png) |
+| ![](docs/screenshots/04-course3-page.png) | ![](docs/screenshots/05-course3-lesson.png) |
 
-Both modules were installed on a clean Odoo 17 database with Arabic loaded, and all 10 unit tests pass.
+All three course modules were installed on a clean Odoo 17 database with Arabic loaded, and all 15 unit tests pass.
 
 ---
 

@@ -52,9 +52,9 @@ jobs:
         run: |
           odoo --db_host=db --db_user=odoo --db_password=odoo \
             --addons-path=/usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons \
-            -d ci -i nova_course_proposal_writing,nova_course_digital_safety \
+            -d ci -i nova_course_proposal_writing,nova_course_digital_safety,nova_course_ai_cultural_work \
             --load-language=ar_001 --without-demo=all \
-            --test-enable --test-tags=/nova_course_proposal_writing,/nova_course_digital_safety \
+            --test-enable --test-tags=/nova_course_proposal_writing,/nova_course_digital_safety,/nova_course_ai_cultural_work \
             --stop-after-init --log-level=test 2>&1 | tee odoo.log
           if grep -qE "(ERROR|CRITICAL) ci " odoo.log; then
             echo "::error::Odoo reported errors"; exit 1

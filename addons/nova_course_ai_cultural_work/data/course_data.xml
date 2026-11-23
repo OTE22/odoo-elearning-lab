@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ===== Course: الذكاء الاصطناعي في العمل الثقافي: استخدام آمن ومسؤول ===== -->
+    <record id="channel" model="slide.channel">
+        <field name="name">الذكاء الاصطناعي في العمل الثقافي: استخدام آمن ومسؤول</field>
+        <field name="channel_type">training</field>
+        <field name="enroll">public</field>
+        <field name="visibility">public</field>
+        <field name="description_short" type="html"><p dir="rtl">استخدم أدوات الذكاء الاصطناعي لتوفير الوقت في الكتابة والترجمة والتلخيص، دون التضحية بالدقة أو الخصوصية، في حوالي ساعة.</p></field>
+        <field name="description" type="html"><div dir="rtl"><p>دورة عملية للفنانين والعاملين في المؤسسات الثقافية. تتعلّم فيها ما تستطيع أدوات الذكاء الاصطناعي التوليدي فعله وما لا تستطيعه، وكيف تكتب طلبات واضحة، وتستخدمها في المسودات والترجمة والتلخيص، مع مراجعة بشرية دائمة وحماية للبيانات.</p><p>لا تحتاج إلى خبرة تقنية. كل درس يتضمّن مثالاً من الواقع وتمريناً تطبيقياً.</p></div></field>
+        <field name="image_1920" type="base64" file="nova_course_ai_cultural_work/static/img/cover.png"/>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <!-- Section 1: الوحدة 1: الأساسيات -->
+    <record id="section_1" model="slide.slide">
+        <field name="name">الوحدة 1: الأساسيات</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">1</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_1_1" model="slide.slide">
+        <field name="name">ما الذي يستطيع الذكاء الاصطناعي فعله لك؟</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">2</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.1333</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="True"/>
+        <field name="description">نقاط القوة والضعف في أدوات الذكاء الاصطناعي التوليدي.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>أدوات الذكاء الاصطناعي التوليدي هي برامج تكتب نصوصاً أو تلخّصها أو تترجمها بناءً على طلب تكتبه أنت. يمكن أن توفّر عليك ساعات من العمل، لكنها ليست مصدراً موثوقاً للحقائق.</p>
+<h3>أين تساعدك فعلاً؟</h3>
+<ul><li>كتابة مسودة أولى لرسالة أو منشور أو ملخّص مشروع</li><li>إعادة صياغة نص طويل بلغة أبسط</li><li>ترجمة أولية بين العربية والإنجليزية</li><li>تلخيص تقرير أو محضر اجتماع</li><li>اقتراح أفكار لعناوين أو أنشطة</li></ul>
+<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">حدودها</p><ul><li>قد «تخترع» معلومات أو مراجع تبدو مقنعة لكنها خاطئة</li><li>لا تعرف سياقك المحلي إلا إذا شرحته لها</li><li>قد تحتفظ الخدمة بما تكتبه، فلا تضع فيها بيانات حساسة</li></ul></div>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">القاعدة الذهبية</p><p>الذكاء الاصطناعي يكتب المسودة، وأنت تبقى المسؤول عن النتيجة النهائية.</p></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (3 دقائق)</p><p>اكتب ثلاث مهام متكرّرة في عملك الأسبوعي يمكن أن يساعدك فيها الذكاء الاصطناعي.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_1_2" model="slide.slide">
+        <field name="name">كيف تكتب طلباً جيداً</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">3</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.2</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">خمسة عناصر تجعل النتيجة أدقّ وأقرب لما تريد.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>جودة النتيجة تعتمد على جودة الطلب. الطلب الغامض يعطي نتيجة عامة، والطلب الواضح يعطي نتيجة قابلة للاستخدام.</p>
+<table style="width:100%;border-collapse:collapse;" border="1" cellpadding="8"><tr style="background:#eef2ff;"><th>العنصر</th><th>السؤال الذي يجيب عنه</th><th>مثال</th></tr><tr><td><b>الدور</b></td><td>من يجب أن يكون المساعد؟</td><td>«تصرّف كمحرّر خبير في المنح الثقافية»</td></tr><tr><td><b>المهمة</b></td><td>ماذا تريد بالضبط؟</td><td>«اكتب ملخّصاً للمشروع»</td></tr><tr><td><b>السياق</b></td><td>ما المعلومات التي يحتاجها؟</td><td>«ورش مسرح لـ 60 شاباً في صيدا خلال 4 أشهر»</td></tr><tr><td><b>الشكل</b></td><td>كيف تريد النتيجة؟</td><td>«فقرة واحدة، 120 كلمة، بالعربية الفصحى»</td></tr><tr><td><b>القيود</b></td><td>ما الذي يجب تجنّبه؟</td><td>«لا تخترع أرقاماً أو شركاء»</td></tr></table>
+<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">✕ طلب ضعيف</p><p>«اكتب لي عن مشروعي.»</p></div>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">✓ طلب واضح</p><p>«تصرّف كمحرّر خبير في المنح الثقافية. اكتب ملخّصاً لمشروع ورش مسرح لـ 60 شاباً في صيدا خلال 4 أشهر. فقرة واحدة من 120 كلمة بالعربية الفصحى. لا تخترع أرقاماً أو شركاء.»</p></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>أعد كتابة طلب استخدمته سابقاً باستخدام العناصر الخمسة، وقارن النتيجتين.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_1_2_q1" model="slide.question">
+        <field name="question">أيّ عنصر ينقص هذا الطلب: «اكتب منشوراً عن معرضنا الفني»؟</field>
+        <field name="sequence">1</field>
+        <field name="slide_id" ref="slide_1_2"/>
+    </record>
+    <record id="slide_1_2_q1_a1" model="slide.answer">
+        <field name="text_value">السياق والشكل: تفاصيل المعرض وطول المنشور ونبرته</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_1_2_q1"/>
+        <field name="comment">بدون تفاصيل المعرض والشكل المطلوب ستكون النتيجة عامة.</field>
+    </record>
+    <record id="slide_1_2_q1_a2" model="slide.answer">
+        <field name="text_value">لا شيء، الطلب كامل</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_1_2_q1"/>
+        <field name="comment">الطلب لا يذكر التاريخ أو المكان أو الجمهور أو الطول.</field>
+    </record>
+    <record id="slide_1_2_q1_a3" model="slide.answer">
+        <field name="text_value">كلمة «من فضلك»</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_1_2_q1"/>
+        <field name="comment">اللطف جيد، لكنه لا يحسّن دقة النتيجة.</field>
+    </record>
+
+    <!-- Section 2: الوحدة 2: تطبيقات عملية -->
+    <record id="section_2" model="slide.slide">
+        <field name="name">الوحدة 2: تطبيقات عملية</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">4</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_2_1" model="slide.slide">
+        <field name="name">المسودات والمقترحات بمساعدة الذكاء الاصطناعي</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">5</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.2</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">سير عمل من أربع خطوات: مسودة، مراجعة، تحسين، تدقيق.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<h3>سير عمل من أربع خطوات</h3>
+<ol><li><b>أعطِ المعلومات:</b> ألصق ملاحظاتك الخاصة عن المشروع (بدون بيانات شخصية).</li><li><b>اطلب مسودة:</b> حدّد القسم المطلوب وطوله، مثل «قسم الحاجة، 200 كلمة».</li><li><b>راجع وحسّن:</b> اطلب «اجعلها أكثر تحديداً» أو «أضف دليلاً من ملاحظاتي».</li><li><b>دقّق بنفسك:</b> تحقّق من كل رقم واسم وتاريخ قبل الإرسال.</li></ol>
+<div style="background:#fff8ec;border:1px solid #f6d9a8;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#5a4320;font-weight:bold;margin:0 0 6px;">مثال من الواقع</p><p>استخدمت فرقة موسيقية صغيرة في طرابلس هذا السير لكتابة مسودة طلب منحة في ساعة بدل يوم كامل، ثم قضت ساعة أخرى في التدقيق وإضافة أرقامها الحقيقية.</p></div>
+<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">تنبيه</p><p>بعض الجهات المانحة تطلب الإفصاح عن استخدام الذكاء الاصطناعي. اقرأ شروط الدعوة.</p></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>اطلب مسودة لقسم واحد من مقترح مشروعك، ثم ضع خطاً تحت كل معلومة تحتاج إلى تحقّق.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_2_2" model="slide.slide">
+        <field name="name">الترجمة والتلخيص مع المراجعة البشرية</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">6</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.1667</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">متى تثق بالترجمة الآلية ومتى تحتاج إلى مراجع.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<p>الترجمة الآلية أصبحت جيدة جداً، لكنها تخطئ في المصطلحات الثقافية والأسماء والنبرة.</p>
+<h3>قاعدة بسيطة</h3>
+<ul><li><b>للفهم الداخلي:</b> الترجمة الآلية تكفي غالباً.</li><li><b>لما سيُنشر أو يُرسل لجهة مانحة:</b> لا بدّ من مراجعة شخص يتقن اللغتين.</li><li><b>للعقود والوثائق القانونية:</b> مترجم محترف فقط.</li></ul>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">حيلة للتلخيص</p><p>اطلب: «لخّص في 5 نقاط، واذكر بعد كل نقطة رقم الفقرة التي أخذتها منها». هكذا تتحقّق بسهولة.</p></div>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (4 دقائق)</p><p>لخّص تقريراً قصيراً بهذه الطريقة، وتحقّق من نقطتين على الأقل في النص الأصلي.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_2_2_q1" model="slide.question">
+        <field name="question">تريد إرسال ملخّص مشروعك المترجم إلى جهة مانحة دولية. ما الخطوة الصحيحة؟</field>
+        <field name="sequence">1</field>
+        <field name="slide_id" ref="slide_2_2"/>
+    </record>
+    <record id="slide_2_2_q1_a1" model="slide.answer">
+        <field name="text_value">ترجمة آلية ثم مراجعة شخص يتقن اللغتين</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_2_2_q1"/>
+        <field name="comment">المراجعة البشرية ضرورية لكل ما يُرسل أو يُنشر.</field>
+    </record>
+    <record id="slide_2_2_q1_a2" model="slide.answer">
+        <field name="text_value">ترجمة آلية وإرسالها مباشرة</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_2_2_q1"/>
+        <field name="comment">قد تحتوي على أخطاء في المصطلحات والنبرة.</field>
+    </record>
+    <record id="slide_2_2_q1_a3" model="slide.answer">
+        <field name="text_value">عدم الترجمة أبداً</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_2_2_q1"/>
+        <field name="comment">الترجمة الآلية مفيدة كمسودة أولى.</field>
+    </record>
+
+    <!-- Section 3: الوحدة 3: الاستخدام المسؤول -->
+    <record id="section_3" model="slide.slide">
+        <field name="name">الوحدة 3: الاستخدام المسؤول</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="is_category" eval="True"/>
+        <field name="sequence">7</field>
+        <field name="slide_category">document</field>
+        <field name="is_published" eval="True"/>
+    </record>
+
+    <record id="slide_3_1" model="slide.slide">
+        <field name="name">الخصوصية والتحقّق من المعلومات</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">8</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.2</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">ما الذي لا تضعه أبداً في أداة ذكاء اصطناعي، وكيف تتحقّق من النتائج.</field>
+        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
+<h3>لا تضع أبداً</h3>
+<ul><li>أسماء المستفيدين أو أرقام هواتفهم أو عناوينهم</li><li>بيانات مالية أو مصرفية</li><li>كلمات مرور أو وثائق داخلية سرّية</li><li>معلومات عن أشخاص في أوضاع هشّة</li></ul>
+<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">بديل آمن</p><p>استبدل الأسماء الحقيقية بأسماء رمزية مثل «المشارك أ»، واحذف أي تفصيل يكشف هوية الشخص.</p></div>
+<h3>ثلاث خطوات للتحقّق</h3>
+<ol><li>اسأل: من أين جاءت هذه المعلومة؟</li><li>ابحث عن مصدر موثوق مستقل يؤكّدها</li><li>إذا لم تجد مصدراً، احذفها</li></ol>
+<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>خذ فقرة كتبتها أداة ذكاء اصطناعي، وحدّد معلومتين تحتاجان إلى تحقّق، وابحث عن مصدر لكل منهما.</p></div>
+</div></field>
+    </record>
+
+    <record id="slide_3_2" model="slide.slide">
+        <field name="name">الاختبار النهائي</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">9</field>
+        <field name="slide_category">quiz</field>
+        <field name="completion_time">0.1667</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="False"/>
+        <field name="description">خمسة أسئلة لمراجعة ما تعلّمته.</field>
+    </record>
+
+    <record id="slide_3_2_q1" model="slide.question">
+        <field name="question">ما الدور الصحيح للذكاء الاصطناعي في كتابة مقترح؟</field>
+        <field name="sequence">1</field>
+        <field name="slide_id" ref="slide_3_2"/>
+    </record>
+    <record id="slide_3_2_q1_a1" model="slide.answer">
+        <field name="text_value">كتابة مسودة يراجعها الإنسان ويدقّقها</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_2_q1"/>
+        <field name="comment">أنت تبقى المسؤول عن النتيجة النهائية.</field>
+    </record>
+    <record id="slide_3_2_q1_a2" model="slide.answer">
+        <field name="text_value">كتابة المقترح النهائي وإرساله</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q1"/>
+        <field name="comment">قد يحتوي على معلومات خاطئة أو مخترعة.</field>
+    </record>
+    <record id="slide_3_2_q1_a3" model="slide.answer">
+        <field name="text_value">اختيار الجهة المانحة بدلاً منك</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q1"/>
+        <field name="comment">هذا قرار يحتاج إلى معرفتك بسياقك.</field>
+    </record>
+
+    <record id="slide_3_2_q2" model="slide.question">
+        <field name="question">أيّ من هذه المعلومات يمكن وضعها بأمان في أداة ذكاء اصطناعي؟</field>
+        <field name="sequence">2</field>
+        <field name="slide_id" ref="slide_3_2"/>
+    </record>
+    <record id="slide_3_2_q2_a1" model="slide.answer">
+        <field name="text_value">وصف عام للمشروع دون أسماء أو بيانات شخصية</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_2_q2"/>
+        <field name="comment">المعلومات العامة لا تعرّض أحداً للخطر.</field>
+    </record>
+    <record id="slide_3_2_q2_a2" model="slide.answer">
+        <field name="text_value">قائمة بأسماء المستفيدين وأرقامهم</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q2"/>
+        <field name="comment">بيانات شخصية لا يجب مشاركتها.</field>
+    </record>
+    <record id="slide_3_2_q2_a3" model="slide.answer">
+        <field name="text_value">كلمة مرور حساب المؤسسة</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q2"/>
+        <field name="comment">لا تشارك كلمات المرور أبداً.</field>
+    </record>
+
+    <record id="slide_3_2_q3" model="slide.question">
+        <field name="question">ذكرت الأداة إحصائية مقنعة دون مصدر. ماذا تفعل؟</field>
+        <field name="sequence">3</field>
+        <field name="slide_id" ref="slide_3_2"/>
+    </record>
+    <record id="slide_3_2_q3_a1" model="slide.answer">
+        <field name="text_value">أبحث عن مصدر موثوق، وإن لم أجده أحذفها</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_2_q3"/>
+        <field name="comment">الأدوات قد تخترع أرقاماً تبدو حقيقية.</field>
+    </record>
+    <record id="slide_3_2_q3_a2" model="slide.answer">
+        <field name="text_value">أستخدمها لأنها تبدو منطقية</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q3"/>
+        <field name="comment">المظهر المقنع لا يعني الصحة.</field>
+    </record>
+    <record id="slide_3_2_q3_a3" model="slide.answer">
+        <field name="text_value">أطلب من الأداة نفسها أن تؤكّدها</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q3"/>
+        <field name="comment">قد تؤكّد خطأها بثقة.</field>
+    </record>
+
+    <record id="slide_3_2_q4" model="slide.question">
+        <field name="question">ما العنصر الذي يحدّد طول النتيجة وشكلها في الطلب؟</field>
+        <field name="sequence">4</field>
+        <field name="slide_id" ref="slide_3_2"/>
+    </record>
+    <record id="slide_3_2_q4_a1" model="slide.answer">
+        <field name="text_value">الشكل</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_2_q4"/>
+        <field name="comment">مثل: فقرة واحدة، 120 كلمة، خمس نقاط.</field>
+    </record>
+    <record id="slide_3_2_q4_a2" model="slide.answer">
+        <field name="text_value">الدور</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q4"/>
+        <field name="comment">الدور يحدّد من يكون المساعد.</field>
+    </record>
+    <record id="slide_3_2_q4_a3" model="slide.answer">
+        <field name="text_value">القيود</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q4"/>
+        <field name="comment">القيود تحدّد ما يجب تجنّبه.</field>
+    </record>
+
+    <record id="slide_3_2_q5" model="slide.question">
+        <field name="question">متى تكفي الترجمة الآلية دون مراجعة؟</field>
+        <field name="sequence">5</field>
+        <field name="slide_id" ref="slide_3_2"/>
+    </record>
+    <record id="slide_3_2_q5_a1" model="slide.answer">
+        <field name="text_value">لفهم نص للاستخدام الداخلي فقط</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_2_q5"/>
+        <field name="comment">أما ما يُنشر أو يُرسل فيحتاج إلى مراجعة.</field>
+    </record>
+    <record id="slide_3_2_q5_a2" model="slide.answer">
+        <field name="text_value">للعقود القانونية</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q5"/>
+        <field name="comment">تحتاج إلى مترجم محترف.</field>
+    </record>
+    <record id="slide_3_2_q5_a3" model="slide.answer">
+        <field name="text_value">للمقترحات المرسلة إلى المانحين</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q5"/>
+        <field name="comment">تحتاج إلى مراجعة شخص يتقن اللغتين.</field>
+    </record>
+
+</odoo>
