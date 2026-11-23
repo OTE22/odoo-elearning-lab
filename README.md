@@ -5,6 +5,7 @@ A hands-on learning project: run **Odoo 17 eLearning** in Docker and ship **Arab
 > Learning project by NovaTechAI. The three courses are original Arabic content; the cases, organisations and figures are fictional and built for practice.
 
 **Live site:** https://learn.novatechai.site/slides
+**Showcase video (2 min):** [NovaTechAI-Academy-showcase.mp4](https://github.com/OTE22/odoo-elearning-lab/releases/download/v1.0/NovaTechAI-Academy-showcase.mp4)
 
 ![Courses in Odoo](docs/screenshots/01-courses.png)
 
