@@ -15,6 +15,7 @@ A hands-on learning project: run **Odoo 17 eLearning** in Docker and ship **Arab
 | 3 | **Course module: Digital Safety for Cultural Organisations** (`الأمان الرقمي للمؤسسات الثقافية`) | Reusing the pattern, writing Odoo unit tests | [docs/03-second-course-and-tests.md](docs/03-second-course-and-tests.md) |
 | 4 | **Ops toolkit** | Backups and restore, Nginx + HTTPS, production workers, GitHub Actions CI | [docs/04-ops-toolkit.md](docs/04-ops-toolkit.md) |
 | + | **Publish live** | Put the courses on a public link (server + HTTPS, or Odoo Online) | [docs/05-publish-live.md](docs/05-publish-live.md) |
+| + | **Cloudflare Tunnel** | Free public HTTPS link from your own computer, no server | [docs/06-cloudflare-tunnel.md](docs/06-cloudflare-tunnel.md) |
 | + | **Course module: AI in Cultural Work** (`الذكاء الاصطناعي في العمل الثقافي`) | A third course built with the same pattern: prompting, drafting, translation, privacy | `addons/nova_course_ai_cultural_work/` |
 
 ## Quick start
@@ -37,6 +38,7 @@ Open http://localhost:8069, log in with `admin` / `admin`, change the password, 
 | `make test` | Run the module tests in a throwaway database |
 | `make backup` / `make restore FILE=...` | Back up or restore database + filestore |
 | `make prod-up` | Production stack behind Nginx |
+| `make quick-tunnel` / `make tunnel` | Public link via Cloudflare (test link / your domain) |
 | `make clean` | Stop and **delete** all data |
 
 ## Repository layout

@@ -7,7 +7,7 @@ MODULES := nova_course_proposal_writing,nova_course_digital_safety,nova_course_a
 COMPOSE := docker compose
 ODOO    := $(COMPOSE) run --rm odoo odoo
 
-.PHONY: help up down logs init update test shell psql backup restore prod-up clean
+.PHONY: help up down logs init update test shell psql backup restore prod-up tunnel quick-tunnel tunnel-url clean
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2}'
@@ -46,6 +46,16 @@ restore: ## Restore a backup: make restore FILE=backups/xxx.tar.gz
 
 prod-up: ## Start the production stack behind Nginx
 	$(COMPOSE) -f docker-compose.yml -f ops/docker-compose.prod.yml up -d --build
+
+tunnel: ## Publish on your domain via Cloudflare Tunnel (needs CLOUDFLARE_TUNNEL_TOKEN)
+	$(COMPOSE) -f docker-compose.yml -f ops/docker-compose.tunnel.yml up -d --build
+
+quick-tunnel: ## Instant public test link via trycloudflare.com (no account)
+	$(COMPOSE) -f docker-compose.yml -f ops/docker-compose.quicktunnel.yml up -d --build
+	@sleep 8; $(MAKE) -s tunnel-url
+
+tunnel-url: ## Print the temporary trycloudflare.com address
+	@$(COMPOSE) -f docker-compose.yml -f ops/docker-compose.quicktunnel.yml logs cloudflared 2>&1 | grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' | tail -1
 
 clean: ## Stop everything and DELETE all data volumes
 	$(COMPOSE) down -v

@@ -1,0 +1,14 @@
+# Publish Odoo on your own domain through a Cloudflare Tunnel (no open ports, free HTTPS).
+# Needs CLOUDFLARE_TUNNEL_TOKEN in .env (see docs/06-cloudflare-tunnel.md).
+#   docker compose -f docker-compose.yml -f ops/docker-compose.tunnel.yml up -d
+services:
+  odoo:
+    command: ["odoo", "--proxy-mode"]
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    depends_on: [odoo]
+    command: ["tunnel", "--no-autoupdate", "run"]
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:?set CLOUDFLARE_TUNNEL_TOKEN in .env}

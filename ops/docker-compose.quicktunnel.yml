@@ -1,0 +1,13 @@
+# Instant public test link (random https://xxxx.trycloudflare.com address), no Cloudflare account needed.
+# The address changes every time the tunnel restarts, so use it for testing only.
+#   docker compose -f docker-compose.yml -f ops/docker-compose.quicktunnel.yml up -d
+#   docker compose -f docker-compose.yml -f ops/docker-compose.quicktunnel.yml logs cloudflared | grep trycloudflare
+services:
+  odoo:
+    command: ["odoo", "--proxy-mode"]
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    depends_on: [odoo]
+    command: ["tunnel", "--no-autoupdate", "--url", "http://odoo:8069"]
