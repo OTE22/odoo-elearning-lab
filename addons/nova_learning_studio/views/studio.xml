@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="course_meta">
+    <div class="nova-meta" dir="auto">
+      <img t-att-src="studio['icon']" width="24" height="24" alt=""/>
+      <span t-esc="studio['category']"/><span t-esc="studio['level']"/>
+      <!-- Odoo's own lesson total, so the label always matches the card footer. -->
+      <span t-if="channel and channel.total_time" t-esc="channel.total_time" t-options="{'widget': 'duration', 'unit': 'hour', 'round': 'minute'}"/>
+      <span t-elif="studio.get('duration')" t-esc="studio['duration']"/>
+    </div>
+  </template>
+  <template id="studio_card" inherit_id="website_slides.course_card">
+    <xpath expr="//div[@t-cache]" position="attributes">
+      <attribute name="t-att-data-nova">channel.nova_studio and channel.nova_studio['key']</attribute>
+    </xpath>
+    <xpath expr="//a[@t-field='channel.name']" position="before">
+      <t t-if="channel.nova_studio" t-call="nova_learning_studio.course_meta"><t t-set="studio" t-value="channel.nova_studio"/></t>
+    </xpath>
+    <xpath expr="//div[@t-field='channel.image_1920']" position="before">
+      <img t-if="channel.nova_studio and not channel.image_128" t-att-src="channel.nova_studio['cover']" class="nova-fallback-cover" alt="" loading="lazy"/>
+    </xpath>
+  </template>
+  <template id="studio_course" inherit_id="website_slides.course_main">
+    <xpath expr="//div[contains(@t-attf-class,'o_wslides_course_header position-relative')]" position="attributes">
+      <attribute name="t-att-data-nova">channel.nova_studio and channel.nova_studio['key']</attribute>
+      <attribute name="t-att-style">channel.nova_studio and ('--nova-banner:url(%s)' % channel.nova_studio['banner'])</attribute>
+    </xpath>
+    <xpath expr="//h1[@t-field='channel.name']" position="before">
+      <t t-if="channel.nova_studio" t-call="nova_learning_studio.course_meta"><t t-set="studio" t-value="channel.nova_studio"/></t>
+    </xpath>
+    <xpath expr="//div[hasclass('o_wslides_course_main')]" position="attributes">
+      <attribute name="t-att-data-nova">channel.nova_studio and channel.nova_studio['key']</attribute>
+    </xpath>
+    <xpath expr="//div[@t-field='channel.description']" position="after">
+      <t t-if="channel.nova_landing" t-call="nova_learning_studio.course_stats"/>
+    </xpath>
+  </template>
+
+  <!-- Course header: key facts and skills, like a professional course landing page. -->
+  <template id="course_stats">
+    <ul class="nova-stats list-unstyled" dir="rtl" aria-label="معلومات الدورة">
+      <li><strong t-esc="len(channel.slide_category_ids)"/><span>وحدات</span></li>
+      <li><strong t-esc="channel.nbr_article"/><span>دروس تطبيقية</span></li>
+      <li><strong t-esc="channel.nbr_quiz"/><span>اختبارات بتعليل</span></li>
+      <li t-if="channel.total_time"><strong t-esc="channel.total_time" t-options="{'widget': 'duration', 'unit': 'hour', 'round': 'minute'}"/><span>مدة التعلّم</span></li>
+      <li><strong>العربية</strong><span>لغة الدورة</span></li>
+    </ul>
+    <div class="nova-skills" dir="rtl">
+      <span class="nova-skills-label">المهارات التي ستكتسبها</span>
+      <ul class="list-unstyled"><li t-foreach="channel.nova_landing['skills']" t-as="skill" t-esc="skill"/></ul>
+    </div>
+  </template>
+
+  <!-- Landing sections below the syllabus. -->
+  <template id="course_landing">
+    <t t-set="landing" t-value="channel.nova_landing"/>
+    <section class="nova-panel nova-deliverables" dir="rtl">
+      <h2>ما ستسلّمه في نهاية الدورة</h2>
+      <ol><li t-foreach="landing['deliverables']" t-as="item" t-esc="item"/></ol>
+    </section>
+    <div class="nova-two-col" dir="rtl">
+      <section class="nova-panel">
+        <h2>لمن هذه الدورة؟</h2>
+        <ul><li t-foreach="landing['audience']" t-as="item" t-esc="item"/></ul>
+      </section>
+      <section class="nova-panel">
+        <h2>ما تحتاجه قبل البدء</h2>
+        <ul><li t-foreach="landing['prerequisites']" t-as="item" t-esc="item"/></ul>
+      </section>
+    </div>
+    <section class="nova-panel nova-context" dir="rtl">
+      <h2>من الممارسة المهنية</h2>
+      <p t-esc="landing['context']"/>
+    </section>
+    <section class="nova-panel nova-faq" dir="rtl">
+      <h2>أسئلة شائعة</h2>
+      <details t-foreach="landing['faq']" t-as="qa">
+        <summary t-esc="qa[0]"/>
+        <p t-esc="qa[1]"/>
+      </details>
+    </section>
+    <section class="nova-panel nova-references" dir="rtl">
+      <h2>مراجع ومصادر للتعمّق</h2>
+      <p class="nova-muted">مصادر رسمية وموثوقة تحقّقنا من روابطها. تُفتح في نافذة جديدة.</p>
+      <ul>
+        <li t-foreach="landing['references']" t-as="ref">
+          <a t-att-href="ref['url']" target="_blank" rel="noopener" t-esc="ref['title']"/>
+          <span class="nova-muted"><t t-esc="ref['org']"/> — <t t-esc="ref['note']"/></span>
+        </li>
+      </ul>
+    </section>
+  </template>
+
+  <!-- Catalog hero: replaces Odoo's generic "Reach new heights" banner. -->
+  <template id="catalog_hero" inherit_id="website_slides.courses_home">
+    <xpath expr="//section[hasclass('s_banner')]" position="replace">
+      <section class="nova-hero" dir="rtl" lang="ar">
+        <div class="container">
+          <p class="nova-hero-kicker">أكاديمية NovaTechAI · دورات عربية متقدمة</p>
+          <h1>تعلّم العمل الثقافي من قرارات يتخذها المحترفون كل يوم</h1>
+          <p class="nova-hero-lead">تمويل المشاريع، والتحرير بالذكاء الاصطناعي تحت إشراف بشري، واستمرارية العمل الرقمي. كل درس حالة واقعية ومهمة تطبيقية وإجابة مقترحة تقارن بها عملك.</p>
+          <ul class="nova-hero-points list-unstyled">
+            <li>حالات تطبيقية من القطاع الثقافي</li>
+            <li>اختبارات تشرح كل إجابة</li>
+            <li>مراجع رسمية موثّقة</li>
+            <li>مجانية ومتاحة للجميع</li>
+          </ul>
+        </div>
+      </section>
+    </xpath>
+  </template>
+  <template id="objectives" inherit_id="website_slides.course_slides_list">
+    <xpath expr="//div[@t-field='channel.description_html']" position="after">
+      <section t-if="channel.nova_studio" class="nova-outcomes" dir="auto">
+        <h2>ماذا ستنجز؟</h2>
+        <ul><li t-foreach="channel.nova_studio['outcomes']" t-as="objective">
+          <img t-att-src="channel.nova_studio['icon']" width="24" height="24" alt=""/>
+          <span t-esc="objective"/>
+        </li></ul>
+      </section>
+      <t t-if="channel.nova_landing" t-call="nova_learning_studio.course_landing"/>
+    </xpath>
+  </template>
+  <template id="instructor" inherit_id="website_slides.course_sidebar">
+    <xpath expr="//span[@t-esc='channel.user_id.display_name']" position="before">
+      <img t-if="channel.nova_studio and not channel.nova_landing" class="nova-avatar" t-att-src="'/web/image/res.users/%s/avatar_128' % channel.user_id.id" width="36" height="36" loading="lazy" alt=""/>
+    </xpath>
+    <!-- The technical "Responsible" user (often OdooBot) is replaced by the authoring team. -->
+    <xpath expr="//tr[@t-if='channel.user_id']" position="before">
+      <tr t-if="channel.nova_landing">
+        <th class="border-top-0">إعداد</th>
+        <td class="border-top-0" t-esc="channel.nova_landing['author']"/>
+      </tr>
+    </xpath>
+    <xpath expr="//tr[@t-if='channel.user_id']" position="attributes">
+      <attribute name="t-if">channel.user_id and not channel.nova_landing</attribute>
+    </xpath>
+    <xpath expr="//table" position="after">
+      <div t-if="channel.nova_landing" class="nova-includes" dir="rtl">
+        <h3>تتضمّن الدورة</h3>
+        <ul class="list-unstyled">
+          <li><i class="fa fa-file-text-o" aria-hidden="true"/> <t t-esc="channel.nbr_article"/> دروس بحالات ومهام تطبيقية</li>
+          <li><i class="fa fa-question-circle-o" aria-hidden="true"/> <t t-esc="channel.nbr_quiz"/> اختبارات مع تعليل لكل خيار</li>
+          <li><i class="fa fa-play-circle-o" aria-hidden="true"/> فيلم قصير مع نص مكتوب</li>
+          <li><i class="fa fa-book" aria-hidden="true"/> <t t-esc="len(channel.nova_landing['references'])"/> مراجع رسمية للتعمّق</li>
+          <li><i class="fa fa-trophy" aria-hidden="true"/> نقاط خبرة عند اجتياز الاختبارات</li>
+          <li><i class="fa fa-unlock" aria-hidden="true"/> تسجيل مجاني ومفتوح للجميع</li>
+        </ul>
+      </div>
+    </xpath>
+  </template>
+  <template id="lesson_media">
+    <section class="nova-lesson" t-att-dir="slide.nova_studio['dir']" t-att-lang="slide.nova_studio['lang']">
+      <details class="nova-guide">
+        <summary t-esc="slide.nova_studio['label']"/>
+        <img t-att-src="slide.nova_studio['diagram']" alt="" loading="lazy" width="800" height="400"/>
+        <ol class="nova-step-text"><li t-foreach="slide.nova_studio['steps']" t-as="step" t-esc="step"/></ol>
+      </details>
+      <div t-if="slide.nova_studio.get('film')" class="nova-film">
+        <h2 t-esc="slide.nova_studio['film_title']"/>
+        <video controls="controls" playsinline="playsinline" preload="none" t-att-poster="slide.nova_studio['poster']" t-att-aria-label="slide.nova_studio['film_title']">
+          <source t-att-src="slide.nova_studio['film']" type="video/mp4"/>
+        </video>
+        <details><summary>النص المرافق للفيلم</summary>
+          <ol><li t-foreach="slide.nova_studio['script']" t-as="line" t-esc="line"/></ol>
+        </details>
+        <div class="nova-calculator" t-if="slide.channel_id.nova_studio['key'] == 'proposal_writing'">
+          <label>اختبر أثر الدفعة الأولى على الفجوة النقدية
+            <select class="form-select">
+              <option value="50">٥٠٪ من ٢٦٠٠</option><option value="70" selected="selected">٧٠٪ من ٢٦٠٠</option>
+              <option value="85">٨٥٪ من ٢٦٠٠</option>
+            </select>
+          </label>
+          <p>المستحق قبل التقرير: ٢١٠٠ وحدة.</p>
+          <output aria-live="polite">فجوة قدرها ٢٨٠ وحدة.</output>
+        </div>
+      </div>
+    </section>
+  </template>
+  <template id="studio_article" inherit_id="website_slides.slide_content_detailed">
+    <xpath expr="//div[@t-field='slide.html_content']" position="before">
+      <t t-if="slide.nova_studio" t-call="nova_learning_studio.lesson_media"/>
+    </xpath>
+  </template>
+  <template id="studio_question" inherit_id="website_slides.lesson_content_quiz_question">
+    <xpath expr="//div[@t-att-data-question-id]" position="attributes">
+      <attribute name="t-att-data-nova">slide.channel_id.nova_studio and slide.channel_id.nova_studio['key']</attribute>
+      <attribute name="t-att-dir">slide.channel_id.nova_studio and 'auto'</attribute>
+    </xpath>
+  </template>
+</odoo>

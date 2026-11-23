@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Course: AI in Cultural Work: Safe and Responsible Use (Arabic)",
-    "summary": "Arabic self-paced eLearning course with lessons, practice and quizzes",
+    "summary": "Advanced Arabic workshop with case exercises and assessed decisions",
     "description": """
 Installs a complete Arabic course in Odoo eLearning:
 3 units, 5 article lessons, 2 lesson quizzes and a 5-question final quiz.
-Learning project: shows how to ship course content as an installable Odoo module.
+Learners produce a bilingual exhibition label and an editorial decision record.
 """,
-    "version": "17.0.1.0.0",
+    "version": "17.0.3.0.0",
     "category": "Website/eLearning",
     "author": "NovaTechAI",
     "website": "https://www.linkedin.com/in/OTE22",
@@ -15,8 +15,9 @@ Learning project: shows how to ship course content as an installable Odoo module
     "depends": ["website_slides"],
     "data": [
         "data/course_data.xml",
+        "data/curriculum.xml",
     ],
-    "images": ["static/img/cover.png"],
+    "images": ["static/img/workshop.jpg"],
     "installable": True,
     "application": False,
 }

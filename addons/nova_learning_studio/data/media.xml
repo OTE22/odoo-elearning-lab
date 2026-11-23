@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="nova_course_proposal_writing.slide_1_1" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'مسار قرار التقدّم', 'diagram': '/nova_learning_studio/static/media/proposal_writing/slide_1_1.svg', 'steps': ['افحص الأهلية — طابق شرط التوقيع مع الوثائق', 'اضبط المهلة — اطلب الخطاب قبل الإغلاق بيومين', 'احسم القرار — راجع الالتزام عند انقضاء المهلة'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_proposal_writing.slide_1_2" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'كيف يتحوّل التمرين إلى دليل؟', 'diagram': '/nova_learning_studio/static/media/proposal_writing/slide_1_2.svg', 'steps': ['محاولة أولى — يبني الثنائي مشهداً', 'مراجعة — يسمّي الزميل موضع التعديل', 'محاولة ثانية — قارن التغيير ببطاقة الملاحظة'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_proposal_writing.slide_2_1" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'مقارنة المقامين', 'diagram': '/nova_learning_studio/static/media/proposal_writing/slide_2_1.svg', 'steps': ['من تحسّن؟ — ١٢ مشاركاً', 'بين أصحاب القياسين — ١٢ من ١٦ = ٧٥٪', 'بين جميع المسجلين — ١٢ من ٢٠ = ٦٠٪'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_proposal_writing.slide_2_2" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'من الإفادة إلى الاختبار', 'diagram': '/nova_learning_studio/static/media/proposal_writing/slide_2_2.svg', 'steps': ['الدليل — ثمانية رواد يذكرون صعوبة العودة', 'الفجوة — لم تشمل المقابلات المنقطعين', 'القرار — اختبر موعدين قبل حجز القاعة'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_proposal_writing.slide_2_3" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'من التكلفة إلى قرار الدفع', 'diagram': '/nova_learning_studio/static/media/proposal_writing/slide_2_3.svg', 'steps': ['الدفعة عند التوقيع — ٧٠٪ من ٢٦٠٠ = ١٨٢٠', 'استحقاق قبل التقرير — ٢١٠٠ وحدة', 'قرار قبل التوقيع — غطِّ الفجوة البالغة ٢٨٠ وحدة'], 'lang': 'ar', 'dir': 'rtl', 'film': '/nova_learning_studio/static/media/proposal_writing/workshop.mp4', 'poster': '/nova_learning_studio/static/media/proposal_writing/poster.webp', 'film_title': 'لماذا لا يكفي أن تكون الميزانية متوازنة؟', 'script': ['نجمع كلفة التدريب والقاعة والنقل والمواد والعرض. الناتج هو المبلغ المطلوب من المانح.', 'عند التوقيع يصل سبعون في المئة من الطلب. هذه هي السيولة المتاحة الآن.', 'يستحق دفع ٢١٠٠ وحدة قبل التقرير. بطرح الدفعة الأولى يبقى عجز قدره ٢٨٠ وحدة.', 'نطلب اتفاقاً مكتوباً على تأجيل جزء من الدفع ثم نراجع التدفق النقدي قبل توقيع العقد.']}" />
+  </record>
+  <record id="nova_course_proposal_writing.channel" model="slide.channel" forcecreate="False">
+    <field name="nova_studio" eval="{'key': 'proposal_writing', 'level': 'متقدم', 'category': 'تصميم المشاريع', 'duration': '180 دقيقة', 'icon': '/nova_learning_studio/static/media/proposal_writing/icon.svg', 'banner': '/nova_learning_studio/static/media/proposal_writing/banner.webp', 'cover': '/nova_learning_studio/static/media/proposal_writing/cover.webp', 'outcomes': ['استخرج من الدعوة ما يحسم أهلية الطلب وما يؤثر في ترتيبه.', 'اختبر الحلقة الأضعف بين النشاط والنتيجة الفنية.', 'حدّد المقام وخط الأساس وطريقة تفسير الانسحاب.', 'وازن بين إفادات الشركاء وبيانات المشاركين قبل تثبيت تصميمك.', 'سوِّ بنود التكلفة مع سقف المنحة وتدفق النقد ثم راجع الملف كاملاً.']}" />
+  </record>
+  <record id="nova_course_ai_cultural_work.slide_1_1" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'فرز وثائق المعرض', 'diagram': '/nova_learning_studio/static/media/ai_cultural_work/slide_1_1.svg', 'steps': ['للاستخدام — حقائق البطاقة المعتمدة', 'للاستبعاد — الرسالة الشخصية', 'للتحقق — الادعاء بأسبقية المعرض'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_ai_cultural_work.slide_1_2" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'بناء اختبار تحريري', 'diagram': '/nova_learning_studio/static/media/ai_cultural_work/slide_1_2.svg', 'steps': ['التكليف — بطاقة للزائر من أ ود', 'اختبار الدقة — هل بقي عدد الطبعات صحيحاً؟', 'اختبار النقص — أحِل سنة التأسيس إلى المحرر'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_ai_cultural_work.slide_2_1" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'تتبع ثلاثة ادعاءات', 'diagram': '/nova_learning_studio/static/media/ai_cultural_work/slide_2_1.svg', 'steps': ['العدد — مثبت بالوثيقة أ', 'الوسيط — صحّح الزيت إلى طباعة على ورق', 'المنشأ — احجز نسبة الأعمال إلى بيروت'], 'lang': 'ar', 'dir': 'rtl', 'film': '/nova_learning_studio/static/media/ai_cultural_work/workshop.mp4', 'poster': '/nova_learning_studio/static/media/ai_cultural_work/poster.webp', 'film_title': 'كيف نراجع جملة واحدة قبل النشر؟', 'script': ['نفصل العدد والوسيط والمنشأ. يمكن لكل جزء أن يكون صحيحاً أو خاطئاً بصورة مستقلة.', 'تثبت بطاقة المعرض العدد. يسجل المحرر الوثيقة أ مرجعاً لهذا الجزء.', 'تصف البطاقة أعمالاً مطبوعة على الورق. نصحح الوسيط في اللغتين.', 'لم يرد منشأ الأعمال في البطاقة. نحذف المدينة من النص ونحيل السؤال إلى القيّمة.']}" />
+  </record>
+  <record id="nova_course_ai_cultural_work.slide_2_2" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'مراجعة فعل الزائر', 'diagram': '/nova_learning_studio/static/media/ai_cultural_work/slide_2_2.svg', 'steps': ['التوجيه العربي — تأمّل الطبعتين', 'خطأ الترجمة — دعوة إلى اللمس', 'القرار — استعد فعل الملاحظة البصرية'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_ai_cultural_work.slide_3_1" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'انتقال التصحيح إلى الجمهور', 'diagram': '/nova_learning_studio/static/media/ai_cultural_work/slide_3_1.svg', 'steps': ['وثيقة هـ — اعتمد الموعد الجديد', 'الموقع — راجع اللغتين بعد التحديث', 'الطباعة — تحقق من سحب الملف القديم'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_ai_cultural_work.channel" model="slide.channel" forcecreate="False">
+    <field name="nova_studio" eval="{'key': 'ai_cultural_work', 'level': 'متقدم', 'category': 'التحرير الثقافي', 'duration': '180 دقيقة', 'icon': '/nova_learning_studio/static/media/ai_cultural_work/icon.svg', 'banner': '/nova_learning_studio/static/media/ai_cultural_work/banner.webp', 'cover': '/nova_learning_studio/static/media/ai_cultural_work/cover.webp', 'outcomes': ['افصل مواد العمل عن المواد التي أذن أصحابها باستخدامها للنشر.', 'عرّف ما يُقبل من المسودة قبل توليدها.', 'حوّل مراجعة الانطباع العام إلى سجل قابل للتدقيق.', 'افحص المصطلحات والنبرة والأرقام عبر اللغتين.', 'اتخذ قرار نشر موثّقاً عند تغيير معلومة في اللحظة الأخيرة.']}" />
+  </record>
+  <record id="nova_course_digital_safety.slide_1_1" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'قياسان لانقطاع واحد', 'diagram': '/nova_learning_studio/static/media/digital_safety/slide_1_1.svg', 'steps': ['آخر نسخة — الظهر', 'الفقد المحتمل — خمس ساعات عند التوقف', 'قرار التشغيل — سوِّ الحجوزات الأحدث'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_digital_safety.slide_1_2" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'اختبار الدور الوظيفي', 'diagram': '/nova_learning_studio/static/media/digital_safety/slide_1_2.svg', 'steps': ['الاستقبال — رمز الحجز وحالة الدخول', 'المحاسبة — ردّ المدفوعات', 'المسؤول الاحتياطي — اختبار دخول مستقل'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_digital_safety.slide_2_1" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'خط قرارات الاستجابة', 'diagram': '/nova_learning_studio/static/media/digital_safety/slide_2_1.svg', 'steps': ['قبل التحقق — جمّد تغيير حساب الدفع', 'قناة مستقلة — اتصل بالرقم المسجل في العقد', 'بعد التحقق — وثّق النتيجة ومسؤول المتابعة'], 'lang': 'ar', 'dir': 'rtl'}" />
+  </record>
+  <record id="nova_course_digital_safety.slide_2_2" model="slide.slide" forcecreate="False">
+    <field name="nova_studio" eval="{'label': 'من توقف النظام إلى عودة الخدمة', 'diagram': '/nova_learning_studio/static/media/digital_safety/slide_2_2.svg', 'steps': ['١٧:٠٠ — بدء حساب زمن الانقطاع', '١٧:٤٠ — الملف مفتوح والصلاحيات خاطئة', '١٨:٠٥ — العرض صالح بعد ٦٥ دقيقة'], 'lang': 'ar', 'dir': 'rtl', 'film': '/nova_learning_studio/static/media/digital_safety/workshop.mp4', 'poster': '/nova_learning_studio/static/media/digital_safety/poster.webp', 'film_title': 'متى تعود خدمة الحجوزات فعلياً؟', 'script': ['هذه آخر نسخة قابلة للاستخدام. نحسب عمرها عند وقوع الانقطاع.', 'عمر النسخة تسعون دقيقة. يتحقق هدف فقد التعديلات الذي حدده الفريق بساعتين.', 'بعد أربعين دقيقة يفتح الملف، لكن موظف الباب يستطيع رؤية الفواتير. يحتاج العرض إلى تصحيح.', 'اجتاز عرض الاستقبال اختبار الصلاحيات بعد خمس وستين دقيقة من الانقطاع. تجاوزنا الهدف بخمس دقائق.']}" />
+  </record>
+  <record id="nova_course_digital_safety.channel" model="slide.channel" forcecreate="False">
+    <field name="nova_studio" eval="{'key': 'digital_safety', 'level': 'متقدم', 'category': 'عمليات المهرجانات', 'duration': '150 دقيقة', 'icon': '/nova_learning_studio/static/media/digital_safety/icon.svg', 'banner': '/nova_learning_studio/static/media/digital_safety/banner.webp', 'cover': '/nova_learning_studio/static/media/digital_safety/cover.webp', 'outcomes': ['استخرج من جدول العرض هدفين قابلين للاختبار للاستعادة.', 'وازن بين أقل قدر من الوصول وإمكانية استعادة الإدارة عند غياب المسؤول.', 'تدرّب على توزيع الأدوار حين تصل مطالبة مالية مشكوك فيها.', 'اختبر صلاحية النسخة للاستخدام وقارن نتيجة الاختبار بأهداف الخدمة.']}" />
+  </record>
+</odoo>

@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- ===== Course: الأمان الرقمي للمؤسسات الثقافية ===== -->
     <record id="channel" model="slide.channel">
-        <field name="name">الأمان الرقمي للمؤسسات الثقافية</field>
+        <field name="name">إدارة المخاطر الرقمية واستمرارية العمل الثقافي</field>
         <field name="channel_type">training</field>
         <field name="enroll">public</field>
         <field name="visibility">public</field>
-        <field name="description_short" type="html"><p dir="rtl">احمِ حساباتك وملفات مؤسستك من أكثر المخاطر شيوعاً في حوالي 55 دقيقة.</p></field>
-        <field name="description" type="html"><div dir="rtl"><p>دورة عملية قصيرة للعاملين في المؤسسات والمجموعات الثقافية. تتعلّم فيها كيف تحمي حساباتك، وتكتشف رسائل التصيّد، وتشارك الملفات وتحفظ نسخاً احتياطية بأمان، دون الحاجة إلى خبرة تقنية.</p></div></field>
-        <field name="image_1920" type="base64" file="nova_course_digital_safety/static/img/cover.png"/>
+        <field name="description_short" type="html"><p dir="rtl">ضع خطة تشغيل لمهرجان يفقد الوصول إلى سجل الحجوزات، واختبر الصلاحيات والاستعادة بالأدلة.</p></field>
+        <field name="description" type="html"><div lang="ar" dir="rtl"><p>ورشة عملية مدتها ساعتان ونصف لمسؤولي البرامج والعمليات ممن يديرون ملفات فريق. تحتاج إلى ورقة وقلم أو جدول بيانات. تُنفذ المحاكاة ببيانات مصطنعة وعلى الورق، ويمكن تطبيق اختبار الاستعادة على ملفات تدريبية منفصلة.</p><p>تنهي الورشة بسجل مخاطر ومصفوفة صلاحيات ومحضر استعادة يوضح متى يستطيع فريق الاستقبال العودة إلى العمل.</p></div></field>
+        <field name="image_1920" type="base64" file="nova_course_digital_safety/static/img/workshop.jpg"/>
         <field name="is_published" eval="True"/>
     </record>
 
-    <!-- Section 1: الوحدة 1: حماية الحسابات -->
     <record id="section_1" model="slide.slide">
-        <field name="name">الوحدة 1: حماية الحسابات</field>
+        <field name="name">العمليات الحرجة وحوكمة الوصول</field>
         <field name="channel_id" ref="channel"/>
         <field name="is_category" eval="True"/>
         <field name="sequence">1</field>
@@ -24,70 +22,86 @@
     </record>
 
     <record id="slide_1_1" model="slide.slide">
-        <field name="name">لماذا تُستهدف المؤسسات الصغيرة؟</field>
+        <field name="name">تحديد الأثر وحدود الانقطاع</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">2</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.1167</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="True"/>
-        <field name="description">المخاطر الأكثر شيوعاً ولماذا لا يكفي أن تكون «صغيراً».</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<p>يظنّ كثيرون أن المهاجمين يستهدفون الشركات الكبيرة فقط. في الواقع، المؤسسات الصغيرة هدف سهل لأنها غالباً بلا فريق تقني، وتستخدم كلمات مرور ضعيفة، وتحفظ بيانات حساسة عن الفنانين والمستفيدين والمانحين.</p>
-<h3>أكثر ثلاثة مخاطر شيوعاً</h3>
-<ol><li>سرقة الحسابات بسبب كلمات مرور ضعيفة أو مكرّرة</li><li>رسائل التصيّد التي تخدعك لإدخال كلمة المرور أو تحويل أموال</li><li>فقدان الملفات بسبب عطل أو سرقة جهاز دون نسخة احتياطية</li></ol>
-<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (3 دقائق)</p><p>اكتب قائمة بالحسابات الأهم لمؤسستك: البريد، وسائل التواصل، الحساب المصرفي، التخزين السحابي.</p></div>
+        <field name="description">استخرج من جدول العرض هدفين قابلين للاختبار للاستعادة.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#155852;font-size:1.2rem;font-weight:600;">استخرج من جدول العرض هدفين قابلين للاختبار للاستعادة.</p>
+<h2>ساعة المهرجان</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>التصدير</dt><dd class="mb-0">١٢ ظهراً</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>توقف النظام</dt><dd class="mb-0">٥ مساءً</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>فتح الأبواب</dt><dd class="mb-0">٦ مساءً</dd></div>
+</dl>
+<p>يفتح مهرجان افتراضي أبوابه عند السادسة. يحتاج الاستقبال إلى رمز الحجز وحالة الدخول، بينما تحتفظ المحاسبة بالفواتير. يوافق مدير التشغيل على إعادة خدمة الحجوزات خلال ساعة من توقفها وعلى فقد تعديلات لا تتجاوز ساعتين. آخر تصدير محفوظ عند الظهر.</p>
+<h2>طريقة العمل</h2>
+<p>زمن الاستعادة المستهدف يحدد كم يمكن أن يبقى الفريق دون الخدمة. أما نقطة الاستعادة المستهدفة فتحدد كم من التغييرات يمكن فقده. عند توقف النظام في الخامسة تعود نسخة الظهر بالفريق خمس ساعات إلى الوراء حتى لو فُتحت خلال دقائق.</p>
+<div style="border-right:4px solid #155852;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">ارسم خطاً زمنياً من الظهر حتى السادسة. اكتب أثر فقدان حجز جديد وأثر فقدان فاتورة في عمل موظف الباب، ثم حدد الحقول الضرورية لنسخة استقبال مؤقتة ومن يملك قرار تفعيلها.</p></div>
+<h2>راجع إجابتك</h2>
+<p>نسخة الظهر تتجاوز هدف الفقد بثلاث ساعات. يمكن إعداد قائمة دخول مقيدة ذات توقيت معلوم مع إجراء منفصل لتسوية الحجوزات الأحدث. يقرر مدير التشغيل تفعيل البديل ويسجل موظف الباب الاستثناءات برموز الحجز فقط.</p>
 </div></field>
     </record>
 
     <record id="slide_1_2" model="slide.slide">
-        <field name="name">كلمات المرور والتحقّق بخطوتين</field>
+        <field name="name">مراجعة الصلاحيات واستمرارية إدارة الحساب</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">3</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.2</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">مدير كلمات المرور والتحقّق بخطوتين: أهم خطوتين تحميان حساباتك.</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<h3>قاعدتان تكفيان لمعظم الحالات</h3>
-<ol><li><b>كلمة مرور مختلفة وطويلة لكل حساب</b>، ويحفظها لك مدير كلمات مرور موثوق.</li><li><b>تفعيل التحقّق بخطوتين</b> على البريد ووسائل التواصل، ويُفضَّل تطبيق مصادقة بدلاً من الرسائل النصية.</li></ol>
-<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">عبارة مرور بدل كلمة مرور</p><p>أربع كلمات عشوائية مع رقم أسهل للتذكّر وأصعب للكسر من كلمة قصيرة معقّدة.</p></div>
-<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">لا تفعل</p><ul><li>مشاركة كلمة مرور حساب المؤسسة عبر واتساب</li><li>استخدام كلمة المرور نفسها للبريد ووسائل التواصل</li></ul></div>
-<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>فعّل التحقّق بخطوتين على بريدك الإلكتروني الآن، ثم ضع علامة على هذا الدرس كمكتمل.</p></div>
+        <field name="description">وازن بين أقل قدر من الوصول وإمكانية استعادة الإدارة عند غياب المسؤول.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#155852;font-size:1.2rem;font-weight:600;">وازن بين أقل قدر من الوصول وإمكانية استعادة الإدارة عند غياب المسؤول.</p>
+<h2>خريطة الأدوار</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>الاستقبال</dt><dd class="mb-0">تسجيل الدخول</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>المحاسبة</dt><dd class="mb-0">ردّ المدفوعات</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>التصميم</dt><dd class="mb-0">انتهى التكليف</dd></div>
+</dl>
+<p>تحتاج ليلى في الاستقبال إلى قراءة رمز الحجز وتسجيل الدخول. يتولى سامر ردّ المدفوعات. صممت متطوعة الملصق وانتهى تكليفها. تدير المنسقة الحساب وحدها وجهاز التحقق معها أثناء سفرها. يملك الثلاثة رابط تحرير المجلد كاملاً.</p>
+<h2>طريقة العمل</h2>
+<p>ارسم مصفوفة بأسماء الأدوار والأصول والعمليات وتاريخ انتهاء الحاجة. إذا لم تدعم المنصة تقييد الحقول، أنشئ عرضاً منفصلاً للاستقبال بالحقول الضرورية. عالج اعتماد الفريق على شخص واحد بتعيين مسؤول احتياطي له حساب مستقل وتحقق متعدد العوامل ومسار استرداد مضبوط.</p>
+<div style="border-right:4px solid #155852;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">اكتب أربعة قرارات وصول وطريقة اختبار لكل قرار باستخدام أدوار تدريبية. أضف طريقة التعامل مع نسخة سبق تنزيلها لدى المتطوعة؛ إلغاء الرابط يحكم الوصول المستقبلي فقط.</p></div>
+<h2>راجع إجابتك</h2>
+<p>تتحقق ليلى من فتح قائمة الدخول وتعذّر فتح الفواتير. يختبر سامر صلاحية الرد بحساب تجريبي. يُلغى رابط التحرير السابق وتراجع عضويات المجلد، ويتابع المسؤول النسخ المنزلة وفق اتفاق العمل. يختبر المسؤول الاحتياطي دخول حسابه دون استعارة جهاز المنسقة.</p>
 </div></field>
     </record>
 
     <record id="slide_1_2_q1" model="slide.question">
-        <field name="question">ما أفضل طريقة لإدارة كلمات مرور فريق صغير؟</field>
+        <field name="question">انتهى تكليف المتطوعة وقد نزّلت ملفاً. أي إجراء يغطي مساري الوصول؟</field>
         <field name="sequence">1</field>
         <field name="slide_id" ref="slide_1_2"/>
     </record>
     <record id="slide_1_2_q1_a1" model="slide.answer">
-        <field name="text_value">مدير كلمات مرور مع خزنة مشتركة</field>
+        <field name="text_value">إبطال الرابط فقط</field>
         <field name="sequence">1</field>
-        <field name="is_correct" eval="True"/>
-        <field name="question_id" ref="slide_1_2_q1"/>
-        <field name="comment">يحفظ كلمات مختلفة وقوية ويتيح مشاركتها بأمان.</field>
-    </record>
-    <record id="slide_1_2_q1_a2" model="slide.answer">
-        <field name="text_value">ملف Excel على سطح المكتب</field>
-        <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_1_2_q1"/>
-        <field name="comment">يسهل سرقته أو فقدانه.</field>
+        <field name="comment">يبقى الملف المنزّل خارج أثر الإبطال.</field>
+    </record>
+    <record id="slide_1_2_q1_a2" model="slide.answer">
+        <field name="text_value">إبطال الوصول ومراجعة النسخة المنزلة وفق اتفاق العمل</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_1_2_q1"/>
+        <field name="comment">يعالج القرار الوصول اللاحق والنسخة الموجودة.</field>
     </record>
     <record id="slide_1_2_q1_a3" model="slide.answer">
-        <field name="text_value">كلمة مرور واحدة قوية لكل الحسابات</field>
+        <field name="text_value">تغيير كلمة مرور المنسقة فقط</field>
         <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_1_2_q1"/>
-        <field name="comment">إذا سُرقت مرة واحدة سقطت كل الحسابات.</field>
+        <field name="comment">قد يظل الرابط والملف متاحين.</field>
     </record>
 
-    <!-- Section 2: الوحدة 2: الرسائل والملفات -->
     <record id="section_2" model="slide.slide">
-        <field name="name">الوحدة 2: الرسائل والملفات</field>
+        <field name="name">الاستجابة واستعادة الخدمة</field>
         <field name="channel_id" ref="channel"/>
         <field name="is_category" eval="True"/>
         <field name="sequence">4</field>
@@ -96,43 +110,60 @@
     </record>
 
     <record id="slide_2_1" model="slide.slide">
-        <field name="name">كيف تكتشف رسائل التصيّد</field>
+        <field name="name">إدارة بلاغ وتوثيق قرار الاحتواء</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">5</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.2</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">علامات بسيطة تكشف معظم الرسائل الاحتيالية.</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<p>رسالة التصيّد تحاول أن تدفعك إلى التصرّف بسرعة: الضغط على رابط، أو تنزيل ملف، أو تحويل مبلغ.</p>
-<h3>خمس علامات تحذيرية</h3>
-<ul><li>عنوان مرسل يشبه عنواناً معروفاً مع اختلاف بسيط</li><li>لهجة مستعجلة أو تهديد بإغلاق الحساب</li><li>رابط لا يطابق اسم الموقع عند تمرير المؤشر فوقه</li><li>طلب كلمة مرور أو رمز تحقّق</li><li>تغيير مفاجئ في رقم حساب مصرفي للدفع</li></ul>
-<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">القاعدة الذهبية</p><p>إذا طُلب منك مال أو كلمة مرور، تحقّق عبر قناة أخرى: اتصل بالشخص على رقم تعرفه.</p></div>
+        <field name="description">تدرّب على توزيع الأدوار حين تصل مطالبة مالية مشكوك فيها.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#155852;font-size:1.2rem;font-weight:600;">تدرّب على توزيع الأدوار حين تصل مطالبة مالية مشكوك فيها.</p>
+<h2>تسلسل البلاغ</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>١٦:٣٠</dt><dd class="mb-0">وصول الطلب</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>١٦:٣٥</dt><dd class="mb-0">إفادة المحاسبة</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>١٦:٤٥</dt><dd class="mb-0">اتصال بالمورّد</dd></div>
+</dl>
+<p>عند ١٦:٣٠ وصلت رسالة تطلب تغيير حساب دفع مورد الصوت. عند ١٦:٣٥ أبلغت المحاسبة بأنها فتحت الرسالة ولم تنفذ التحويل. عند ١٦:٤٥ أكد المورد عبر الرقم المسجل في العقد أنه لم يطلب التغيير. لا يتضمن هذا البلاغ دليلاً على فتح حساب البريد من طرف آخر.</p>
+<h2>طريقة العمل</h2>
+<p>أنشئ سجل حادث بأعمدة الوقت والملاحظة والمصدر والقرار والمسؤول. جمّد تعديل الدفع، وتحقق عبر قناة مستقلة معروفة مسبقاً، واحفظ الرسالة الأصلية في مساحة محدودة الوصول. افصل المؤكد عن الاحتمالات عندما تُبلغ الإدارة.</p>
+<div style="border-right:4px solid #155852;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">اكتب تحديثاً تشغيلياً من أربع جمل يحدد ما حدث، وما تم احتواؤه، وما بقي مجهولاً، وموعد المراجعة. ثم أعد صياغته على فرض أن التحويل نُفذ بالفعل.</p></div>
+<h2>راجع إجابتك</h2>
+<p>في الحالة الأولى تُسجَّل مطالبة غير معتمدة ولم يتم الدفع. تُراجع التغييرات المالية المعلقة ويعيّن مسؤول للتواصل مع المورد. عند ثبوت التحويل تتواصل المالية فوراً مع البنك عبر قناته المعتمدة، وتسجل مرجع البلاغ وتتابع الاستجابة دون وعد باسترجاع المبلغ.</p>
 </div></field>
     </record>
 
     <record id="slide_2_2" model="slide.slide">
-        <field name="name">مشاركة الملفات والنسخ الاحتياطي</field>
+        <field name="name">تمرين استعادة وسجل قرار التشغيل</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">6</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.2</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">قاعدة 3-2-1 ومشاركة الملفات بصلاحيات محدّدة.</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<h3>قاعدة 3-2-1 للنسخ الاحتياطي</h3>
-<ul><li><b>3</b> نسخ من الملفات المهمة</li><li>على <b>2</b> نوعين مختلفين من التخزين</li><li><b>1</b> منها خارج المكتب أو في السحابة</li></ul>
-<h3>مشاركة الملفات بأمان</h3>
-<ul><li>شارك مع أشخاص محدّدين بدل «أي شخص لديه الرابط»</li><li>راجع الصلاحيات كل ثلاثة أشهر وأزل المتطوّعين السابقين</li><li>لا ترسل بيانات المستفيدين في مرفقات بريد عادية</li></ul>
-<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>افتح مجلد المؤسسة على التخزين السحابي وتحقّق: من لديه صلاحية الوصول؟</p></div>
+        <field name="description">اختبر صلاحية النسخة للاستخدام وقارن نتيجة الاختبار بأهداف الخدمة.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#155852;font-size:1.2rem;font-weight:600;">اختبر صلاحية النسخة للاستخدام وقارن نتيجة الاختبار بأهداف الخدمة.</p>
+<h2>تسلسل الاستعادة</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>١٥:٣٠</dt><dd class="mb-0">توقيت النسخة</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>١٧:٠٠</dt><dd class="mb-0">بدء الانقطاع</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>١٧:٤٠</dt><dd class="mb-0">فتح الملف</dd></div>
+</dl>
+<p>توقف سجل الحجز عند ١٧:٠٠. للتمرين نسخة مستقلة عند ١٥:٣٠ تضم ١٢٠ حجزاً مصطنعاً. اكتمل استرجاعها إلى مساحة منفصلة عند ١٧:٤٠. احتفظ مكتب البيع بسجل ستة حجوزات لاحقة؛ أحد الرموز موجود مسبقاً في النسخة. ظهرت الفواتير أيضاً في عرض الاستقبال.</p>
+<h2>طريقة العمل</h2>
+<p>مدة الاستعادة التقنية ٤٠ دقيقة وعمر النسخة ٩٠ دقيقة. قارن الرقمين بالهدفين في الدرس الأول. افحص عدد السجلات وعينة رموز معروفة وحقوق القراءة. لا يكفي نجاح فتح الملف. عند تسوية السجل الإضافي عالج التكرار باستخدام رمز الحجز وتحقق من حالته قبل اعتماده.</p>
+<div style="border-right:4px solid #155852;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">اكتب محضر قرار يضم التوقيتين، وعدد الحجوزات الفريدة المتوقع، وخلل العرض، ومسؤول التصحيح. افترض أن اختبار أقل صلاحية نجح عند ١٨:٠٥ فقط. احسب مدة استعادة الخدمة الفعلية، واقترح تحسيناً يمكن اختباره في التمرين المقبل.</p></div>
+<h2>راجع إجابتك</h2>
+<p>يتوقع ١٢٥ رمزاً فريداً بعد التسوية إذا كانت بقية الرموز جديدة. يستوفي عمر النسخة هدف الساعتين. أما الخدمة المقبولة للمستخدم فعادت بعد ٦٥ دقيقة فتجاوزت هدف الساعة بخمس دقائق. قيّم محضرك بنقطة لكل من حساب الزمنين، وتسوية التكرار، وتقييد العرض، وتسجيل قرار العودة. أعد اختبار عرض استقبال معدّ مسبقاً وقارن الزمنين.</p>
+<h2>قراءة مرتبطة بالتمرين</h2><p>راجع إرشادات النسخ المعزولة واختبار سلامتها، ثم قارنها بما يقيسه محضر الاستعادة. <a href="https://www.cisa.gov/sites/default/files/2025-03/StopRansomware-Guide%20508.pdf">دليل CISA للاستعداد والتعافي (PDF بالإنجليزية)</a></p>
 </div></field>
     </record>
 
-    <!-- Section 3: الوحدة 3: التقييم -->
     <record id="section_3" model="slide.slide">
-        <field name="name">الوحدة 3: التقييم</field>
+        <field name="name">قرار العودة إلى التشغيل</field>
         <field name="channel_id" ref="channel"/>
         <field name="is_category" eval="True"/>
         <field name="sequence">7</field>
@@ -141,122 +172,122 @@
     </record>
 
     <record id="slide_3_1" model="slide.slide">
-        <field name="name">الاختبار النهائي</field>
+        <field name="name">اختبار القرارات المهنية</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">8</field>
         <field name="slide_category">quiz</field>
-        <field name="completion_time">0.1667</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">أربعة أسئلة لمراجعة الدورة.</field>
+        <field name="description">اختر القرار الأنسب لكل حالة، ثم راجع التعليل وقارنه بملف عملك.</field>
     </record>
 
     <record id="slide_3_1_q1" model="slide.question">
-        <field name="question">وصلتك رسالة من «المدير» يطلب تحويل مبلغ عاجل إلى حساب جديد. ماذا تفعل؟</field>
+        <field name="question">نفّذ الفريق تحويلاً قبل وصول نفي المورد. ما أول قرار تشغيلي؟</field>
         <field name="sequence">1</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q1_a1" model="slide.answer">
-        <field name="text_value">أتصل بالمدير على رقم أعرفه للتأكّد</field>
+        <field name="text_value">الاتصال بالبنك عبر القناة المعتمدة وتوثيق مرجع البلاغ</field>
         <field name="sequence">1</field>
         <field name="is_correct" eval="True"/>
         <field name="question_id" ref="slide_3_1_q1"/>
-        <field name="comment">التحقّق عبر قناة أخرى يكشف معظم عمليات الاحتيال.</field>
+        <field name="comment">عامل الوقت مهم لمحاولة إيقاف التحويل.</field>
     </record>
     <record id="slide_3_1_q1_a2" model="slide.answer">
-        <field name="text_value">أحوّل المبلغ لأنه عاجل</field>
+        <field name="text_value">انتظار تحليل البريد قبل مخاطبة البنك</field>
         <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q1"/>
-        <field name="comment">الاستعجال علامة تحذيرية شائعة.</field>
+        <field name="comment">يؤخر فرصة التعامل مع التحويل.</field>
     </record>
     <record id="slide_3_1_q1_a3" model="slide.answer">
-        <field name="text_value">أردّ على الرسالة نفسها لأسأل</field>
+        <field name="text_value">حذف الرسالة من كل الصناديق</field>
         <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q1"/>
-        <field name="comment">قد يكون المهاجم هو من يردّ.</field>
+        <field name="comment">تحتاج المراجعة إلى الدليل الأصلي.</field>
     </record>
 
     <record id="slide_3_1_q2" model="slide.question">
-        <field name="question">ما الذي يعنيه التحقّق بخطوتين؟</field>
+        <field name="question">نسخة ١٥:٣٠ استُخدمت بعد انقطاع ١٧:٠٠. ماذا يقيس الفرق؟</field>
         <field name="sequence">2</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q2_a1" model="slide.answer">
-        <field name="text_value">رمز إضافي بعد كلمة المرور</field>
+        <field name="text_value">مدة تعطل شباك الدخول</field>
         <field name="sequence">1</field>
-        <field name="is_correct" eval="True"/>
+        <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q2"/>
-        <field name="comment">حتى لو سُرقت كلمة المرور يبقى الحساب محمياً.</field>
+        <field name="comment">لا تحدد النسخة متى عادت الخدمة.</field>
     </record>
     <record id="slide_3_1_q2_a2" model="slide.answer">
-        <field name="text_value">كلمتا مرور مختلفتان</field>
+        <field name="text_value">الزمن اللازم لنسخ الملف</field>
         <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q2"/>
-        <field name="comment">ليس هذا المقصود.</field>
+        <field name="comment">لا نعرف توقيت بدء النسخ.</field>
     </record>
     <record id="slide_3_1_q2_a3" model="slide.answer">
-        <field name="text_value">تغيير كلمة المرور مرتين سنوياً</field>
+        <field name="text_value">فترة التغييرات المعرضة للفقد</field>
         <field name="sequence">3</field>
-        <field name="is_correct" eval="False"/>
+        <field name="is_correct" eval="True"/>
         <field name="question_id" ref="slide_3_1_q2"/>
-        <field name="comment">هذه ممارسة مختلفة.</field>
+        <field name="comment">تقارن الدقائق التسعون بهدف نقطة الاستعادة.</field>
     </record>
 
     <record id="slide_3_1_q3" model="slide.question">
-        <field name="question">حسب قاعدة 3-2-1، كم نسخة يجب أن تكون خارج المكتب؟</field>
+        <field name="question">فُتح الملف عند ١٧:٤٠ لكن الفواتير ظاهرة للاستقبال. متى تسجّل عودة الخدمة؟</field>
         <field name="sequence">3</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q3_a1" model="slide.answer">
-        <field name="text_value">نسخة واحدة على الأقل</field>
+        <field name="text_value">عند اكتمال نقل الملف</field>
         <field name="sequence">1</field>
-        <field name="is_correct" eval="True"/>
-        <field name="question_id" ref="slide_3_1_q3"/>
-        <field name="comment">لحماية الملفات من حريق أو سرقة.</field>
-    </record>
-    <record id="slide_3_1_q3_a2" model="slide.answer">
-        <field name="text_value">لا شيء</field>
-        <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q3"/>
-        <field name="comment">كل النسخ في مكان واحد تعني خطراً واحداً.</field>
+        <field name="comment">النقل لا يثبت إمكانية الاستخدام المسموح.</field>
+    </record>
+    <record id="slide_3_1_q3_a2" model="slide.answer">
+        <field name="text_value">عندما ينجح اختبار الدور ويُتاح العمل المعتمد</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q3"/>
+        <field name="comment">يقيس ذلك العودة الفعلية للعمل.</field>
     </record>
     <record id="slide_3_1_q3_a3" model="slide.answer">
-        <field name="text_value">ثلاث نسخ</field>
+        <field name="text_value">عند نهاية اليوم تلقائياً</field>
         <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q3"/>
-        <field name="comment">يكفي نسخة واحدة خارج المكتب.</field>
+        <field name="comment">الزمن يحتاج إلى واقعة مثبتة.</field>
     </record>
 
     <record id="slide_3_1_q4" model="slide.question">
-        <field name="question">أفضل طريقة لمشاركة ملف فيه بيانات مستفيدين:</field>
+        <field name="question">تضم النسخة ١٢٠ رمزاً وأضيفت ستة حجوزات بينها رمز مطابق. ما التحقق المناسب؟</field>
         <field name="sequence">4</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q4_a1" model="slide.answer">
-        <field name="text_value">مشاركة مع أشخاص محدّدين بصلاحيات واضحة</field>
+        <field name="text_value">مطابقة حالة الرمز المتكرر والتأكد من وجود ١٢٥ رمزاً فريداً</field>
         <field name="sequence">1</field>
         <field name="is_correct" eval="True"/>
         <field name="question_id" ref="slide_3_1_q4"/>
-        <field name="comment">يحدّ من الوصول غير المقصود.</field>
+        <field name="comment">العدد المتوقع يحذف تكراراً واحداً مع فحص الحالة.</field>
     </record>
     <record id="slide_3_1_q4_a2" model="slide.answer">
-        <field name="text_value">رابط مفتوح لأي شخص</field>
+        <field name="text_value">إعلان اكتمال ١٢٦ حجزاً فور الدمج</field>
         <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q4"/>
-        <field name="comment">قد يصل الرابط إلى أي أحد.</field>
+        <field name="comment">يحسب ذلك الرمز المتكرر مرتين.</field>
     </record>
     <record id="slide_3_1_q4_a3" model="slide.answer">
-        <field name="text_value">مرفق في مجموعة واتساب</field>
+        <field name="text_value">إهمال كل الحجوزات اللاحقة</field>
         <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q4"/>
-        <field name="comment">يصعب التحكم بمن يحتفظ بنسخة.</field>
+        <field name="comment">يؤدي ذلك إلى فقد خمسة رموز جديدة.</field>
     </record>
 
 </odoo>

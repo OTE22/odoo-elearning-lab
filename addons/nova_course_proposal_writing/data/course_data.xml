@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- ===== Course: كتابة مقترح مشروع ثقافي ناجح ===== -->
     <record id="channel" model="slide.channel">
-        <field name="name">كتابة مقترح مشروع ثقافي ناجح</field>
+        <field name="name">تصميم مقترح ثقافي قابل للتمويل والتقييم</field>
         <field name="channel_type">training</field>
         <field name="enroll">public</field>
         <field name="visibility">public</field>
-        <field name="description_short" type="html"><p dir="rtl">حوّل فكرتك الثقافية إلى مقترح واضح ومقنع في حوالي 70 دقيقة.</p></field>
-        <field name="description" type="html"><div dir="rtl"><p>دورة ذاتية قصيرة للفنانين والمجموعات والمؤسسات الثقافية الصغيرة. تتعلّم فيها خطوة بخطوة كيف تحدّد الحاجة، وتكتب أهدافاً ذكية، وتربط الأنشطة بالنتائج، وتُعدّ ميزانية وجدولاً زمنياً واقعيين.</p><p>كل درس يتضمّن مثالاً من الواقع وتمريناً تطبيقياً، وتنتهي الدورة باختبار نهائي.</p></div></field>
-        <field name="image_1920" type="base64" file="nova_course_proposal_writing/static/img/cover.png"/>
+        <field name="description_short" type="html"><p dir="rtl">ابنِ ملف تمويل لمختبر مسرح مجتمعي، من قرار التقدّم حتى الدفاع عن الميزانية والنتائج.</p></field>
+        <field name="description" type="html"><div lang="ar" dir="rtl"><p>ورشة متقدمة لمن سبق له إعداد نشاط ثقافي أو قراءة دعوة تمويل. تحتاج إلى ورقة حسابية ومستند نصي. خصّص ثلاث ساعات تشمل العمل المستقل. بيانات الدعوة والمسرح افتراضية ومتاحة كاملة هنا.</p><p>تخرج بمذكرة قرار، ومصفوفة نتائج، وميزانية قابلة للتعديل. احتفظ بالمسودات في ملف واحد واستخدم سلم المراجعة قبل الاختبار.</p></div></field>
+        <field name="image_1920" type="base64" file="nova_course_proposal_writing/static/img/workshop.jpg"/>
         <field name="is_published" eval="True"/>
     </record>
 
-    <!-- Section 1: الوحدة 1: الأساسيات -->
     <record id="section_1" model="slide.slide">
-        <field name="name">الوحدة 1: الأساسيات</field>
+        <field name="name">قراءة الدعوة واتخاذ قرار التقدّم</field>
         <field name="channel_id" ref="channel"/>
         <field name="is_category" eval="True"/>
         <field name="sequence">1</field>
@@ -24,44 +22,59 @@
     </record>
 
     <record id="slide_1_1" model="slide.slide">
-        <field name="name">ما هو المقترح ولماذا يهمّ؟</field>
+        <field name="name">قرار التقدّم وشروط الأهلية</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">2</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.1333</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="True"/>
-        <field name="description">ما الذي تبحث عنه الجهة المانحة، والأجزاء الأساسية لأي مقترح.</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<h3>لماذا تكتب مقترحاً؟</h3>
-<p>المقترح هو الوثيقة التي تقنع جهة مانحة أو شريكاً بأن فكرتك تستحق الدعم. هو ليس وصفاً لأحلامك، بل خطة واضحة تجيب عن سؤال واحد: ما المشكلة، وكيف ستساهم في حلّها؟</p>
-<h3>الأجزاء الأساسية لأي مقترح</h3>
-<ol><li><b>ملخّص المشروع:</b> فقرة واحدة تشرح الفكرة كاملة.</li><li><b>الحاجة أو المشكلة:</b> لماذا هذا المشروع مهم الآن، ولمن؟</li><li><b>الأهداف:</b> ما الذي ستحقّقه بشكل قابل للقياس.</li><li><b>الأنشطة:</b> ماذا ستفعل بالضبط لتحقيق الأهداف.</li><li><b>النتائج المتوقّعة وطريقة التقييم.</b></li><li><b>الميزانية والجدول الزمني.</b></li><li><b>الفريق والشركاء.</b></li></ol>
-<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">قاعدة ذهبية</p><p>اقرأ دعوة التقديم مرتين قبل أن تكتب. استخدم كلمات الجهة المانحة نفسها، وأجب عن كل سؤال تطرحه بالترتيب.</p></div>
-<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (3 دقائق)</p><p>اكتب في ثلاثة أسطر: ما فكرة مشروعك؟ ولمن هو؟ ولماذا الآن؟</p></div>
+        <field name="description">استخرج من الدعوة ما يحسم أهلية الطلب وما يؤثر في ترتيبه.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#713e59;font-size:1.2rem;font-weight:600;">استخرج من الدعوة ما يحسم أهلية الطلب وما يؤثر في ترتيبه.</p>
+<h2>شروط الدعوة</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>الأهلية</dt><dd class="mb-0">خطاب موقّع</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>السقف</dt><dd class="mb-0">٣٠٠٠ وحدة</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>الإغلاق</dt><dd class="mb-0">بعد خمسة أيام</dd></div>
+</dl>
+<p>تدعو مؤسسة افتراضية فرقاً ثقافية إلى برنامج مدته أربعة أشهر. سقف المنحة ٣٠٠٠ وحدة نقدية. تشترط الدعوة شريكاً محلياً يوقّع قبل الإغلاق، ولا تغطي شراء معدات. يحصل التصميم الفني على ٤٠ نقطة، والوصول إلى الجمهور على ٣٥، والجدوى على ٢٥. بقيت خمسة أيام. المسرح متاح شفهياً، والمنسقة قادرة على الاتصال به اليوم.</p>
+<h2>طريقة العمل</h2>
+<p>أنشئ جدولاً بأعمدة «النص الملزم، الدليل المتاح، الفجوة، المسؤول، آخر موعد». افصل بين شرط يسقط الطلب ونقطة يمكن تحسينها. مثلاً، تؤثر خطة الوصول الضعيفة في ترتيب طلب مؤهل، فيما يعرّض غياب التوقيع الطلب للاستبعاد مهما بلغت جودته الفنية.</p>
+<div style="border-right:4px solid #713e59;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">اكتب مذكرة من ١٢٠ كلمة تحدد متى يتوقف الفريق عن الكتابة. عيّن شخصاً يجمع الدليل وشخصاً يقرر الاستمرار. أضف بنداً يوضح كيف ستتعامل مع كاميرا كان الفريق ينوي شراءها.</p></div>
+<h2>راجع إجابتك</h2>
+<p>قرار مشروط بتسلّم خطاب الشريك قبل الإغلاق بيومين. تطلب المنسقة الخطاب اليوم وتتحقق من اسم الجهة وصلاحية الموقّع. يستخدم الفريق كاميرا متاحة بإذن صاحبها ويستبعد الشراء من الطلب. إذا فات الموعد الداخلي يراجع المدير إمكانية الحصول على التوقيع فعلياً قبل الالتزام بمزيد من العمل.</p>
 </div></field>
     </record>
 
     <record id="slide_1_2" model="slide.slide">
-        <field name="name">قصة من الميدان: مشروع مسرح مجتمعي</field>
+        <field name="name">من نظرية التغيير إلى تصميم قابل للاختبار</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">3</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.0667</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">كيف تحوّلت فكرة بسيطة إلى مشروع مموَّل.</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<p>بدأت مجموعة شبابية صغيرة في صيدا بفكرة: ورش مسرحية لليافعين في الأحياء التي تفتقر إلى مساحات ثقافية. في المحاولة الأولى رُفض المقترح لأنه كان عامّاً: «دعم الشباب من خلال الفن».</p>
-<p>في المحاولة الثانية أعادت المجموعة الكتابة: حدّدت الحي، وعدد المشاركين، وعدد الورش، والمدة، ونتيجة واضحة هي عرض جماهيري في نهاية المشروع. هذه المرة حصلت على التمويل.</p>
-<div style="background:#fff8ec;border:1px solid #f6d9a8;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#5a4320;font-weight:bold;margin:0 0 6px;">ماذا تغيّر؟</p><ul><li>مشكلة موثّقة بأرقام بسيطة من الحي</li><li>أهداف محدّدة وقابلة للقياس</li><li>ميزانية صغيرة وواقعية تتناسب مع حجم الفريق</li></ul></div>
-<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">ملاحظة للمصمّم</p><p>في الدورة الحقيقية يمكن أن يكون هذا الدرس فيديو قصيراً مضغوطاً مع هذا النص كبديل مكتوب.</p></div>
+        <field name="description">اختبر الحلقة الأضعف بين النشاط والنتيجة الفنية.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#713e59;font-size:1.2rem;font-weight:600;">اختبر الحلقة الأضعف بين النشاط والنتيجة الفنية.</p>
+<h2>سلسلة التغيير</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>النشاط</dt><dd class="mb-0">ارتجال ثنائي</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>التغذية الراجعة</dt><dd class="mb-0">ملاحظة من الزملاء</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>دليل التغيّر</dt><dd class="mb-0">مشهد قبل التعديل وبعده</dd></div>
+</dl>
+<p>يريد المختبر أن يتمكن المشاركون من بناء مشهد جماعي. المكان يتسع لعشرين شخصاً. تقترح المسودة ست جلسات يعقبها عرض، ثم تعد بأن العرض سيحسّن التماسك الاجتماعي في المدينة. يستطيع الفريق ملاحظة البروفات، ولا يملك بيانات عن سكان المدينة.</p>
+<h2>طريقة العمل</h2>
+<p>ابنِ سلسلة تبدأ بتمرين ارتجال ثنائي ثم مراجعة بين الأقران ثم إعادة أداء المشهد. صِف التغير المتوقع في الأداء، واختر دليلاً يميّزه عن مجرد الحضور. اختبر الافتراض الذي يصل المراجعة بإعادة الأداء. إذا لم يحصل كل ثنائي على وقت للتعديل انقطعت السلسلة.</p>
+<div style="border-right:4px solid #713e59;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">ارسم السلسلة في أربعة أعمدة وأضف افتراضاً ومؤشراً مبكراً وخيار تعديل. اشرح في سطر واحد أي ادعاء تحذفه من المسودة ولماذا.</p></div>
+<h2>راجع إجابتك</h2>
+<p>منجز الجلسة مشهد مسجل بموافقة أصحابه أو بطاقة ملاحظة مكتوبة. النتيجة أن الثنائي يستطيع تعديل بناء المشهد استجابة لملاحظة محددة. إذا لم تُعد نصف الثنائيات الأداء خلال الجلسة الثالثة، نقلّل عدد المشاهد المعروضة ونحفظ وقتاً للمحاولة الثانية.</p>
 </div></field>
     </record>
 
-    <!-- Section 2: الوحدة 2: بناء المقترح -->
     <record id="section_2" model="slide.slide">
-        <field name="name">الوحدة 2: بناء المقترح</field>
+        <field name="name">بناء الحجة واختبار الموارد</field>
         <field name="channel_id" ref="channel"/>
         <field name="is_category" eval="True"/>
         <field name="sequence">4</field>
@@ -70,95 +83,120 @@
     </record>
 
     <record id="slide_2_1" model="slide.slide">
-        <field name="name">صياغة أهداف ذكية (SMART)</field>
+        <field name="name">تصميم مؤشر وحساب المقام</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">5</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.25</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">اختبر كل هدف بخمسة معايير بسيطة.</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<p>الهدف الجيّد يخبر الجهة المانحة بدقّة ماذا ستُنجز، ولمن، ومتى، وكيف ستعرف أنك نجحت. استخدم المعايير الخمسة التالية لاختبار كل هدف تكتبه.</p>
-<table style="width:100%;border-collapse:separate;border-spacing:6px;color:#fff;text-align:center;"><tr><td style="background:#714B67;border-radius:10px;padding:12px;"><b style="font-size:26px;">S</b><br/>محدَّد</td><td style="background:#8f5f7f;border-radius:10px;padding:12px;"><b style="font-size:26px;">M</b><br/>قابل للقياس</td><td style="background:#017E84;border-radius:10px;padding:12px;"><b style="font-size:26px;">A</b><br/>قابل للتحقيق</td><td style="background:#1f9a8a;border-radius:10px;padding:12px;"><b style="font-size:26px;">R</b><br/>مرتبط بالحاجة</td><td style="background:#d98a1f;border-radius:10px;padding:12px;"><b style="font-size:26px;">T</b><br/>محدَّد زمنياً</td></tr></table>
-<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">✕ هدف غير واضح</p><p>«دعم الشباب في المدينة من خلال الفن.»</p></div>
-<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">✓ هدف ذكي: مثال من الواقع</p><p>«تنظيم 6 ورش مسرحية لـ 60 شاباً وشابة في صيدا خلال 4 أشهر، تنتهي بعرض جماهيري واحد.»</p></div>
-<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين تطبيقي (5 دقائق)</p><p>اكتب هدفاً واحداً لمشروعك، ثم راجعه: هل يجيب عن ماذا؟ لمن؟ أين؟ متى؟ كم؟</p></div>
+        <field name="description">حدّد المقام وخط الأساس وطريقة تفسير الانسحاب.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#713e59;font-size:1.2rem;font-weight:600;">حدّد المقام وخط الأساس وطريقة تفسير الانسحاب.</p>
+<h2>مجموعة القياس</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>المسجّلون</dt><dd class="mb-0">٢٠ شخصاً</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>أصحاب القياسين</dt><dd class="mb-0">١٦ شخصاً</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>تحسّن مثبت</dt><dd class="mb-0">١٢ شخصاً</dd></div>
+</dl>
+<p>سجّل ٢٠ شخصاً، وحضر ١٦ منهم التمرينين القبلي والبعدي. تحسّن ١٢ من هؤلاء درجة واحدة على الأقل. تقيس البطاقة وضوح التحول الدرامي من صفر إلى درجتين. الصفر غياب التحول، والواحد تحول يظهر بعد شرح المؤدي، والاثنتان تحول يدركه الملاحظ من الأداء.</p>
+<h2>طريقة العمل</h2>
+<p>احسب ١٢ ÷ ١٦ لتحصل على ٧٥٪ من أصحاب القياسين. وبالنسبة إلى المسجلين جميعاً، ثبت التحسن لدى ٦٠٪. اذكر الأربعة الذين تعذر قياسهم. إذا كان الأكثر تعثراً هم الذين غابوا، فقد تكون مجموعة القياسين منحازة.</p>
+<div style="border-right:4px solid #713e59;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">اكتب بطاقة مؤشر تتضمن التعريف والبسط والمقام ووقت الرصد والمسؤول وحدود التفسير. اتفق مع ملاحظ ثانٍ على تقييم مشهدين بصورة مستقلة ثم قارنا سبب الاختلاف.</p></div>
+<h2>راجع إجابتك</h2>
+<p>تسجّل المنسقة الدرجات برموز داخلية بعد الجلستين الأولى والأخيرة. تذكر النتيجة ١٢ من ١٦، وتعرض عدد المسجلين والمفقودين إلى جانبها. لا يمكن استنتاج سبب التحسن من هذا القياس وحده.</p>
+<h2>قراءة مرتبطة بالتمرين</h2><p>راجع مدخلَي خط الأساس ومؤشر الأداء عند إعداد بطاقة القياس. <a href="https://www.oecd.org/content/dam/oecd/ar/publications/reports/2023/06/glossary-of-key-terms-in-evaluation-and-results-based-management-for-sustainable-development-second-edition_2767e14e/b98b182b-ar-en-fr.pdf">معجم التقييم والإدارة القائمة على النتائج بالعربية (PDF)</a></p>
 </div></field>
     </record>
 
     <record id="slide_2_1_q1" model="slide.question">
-        <field name="question">أيّ عنصر ينقص هذا الهدف: «تنظيم ورش رسم للأطفال في طرابلس»؟</field>
+        <field name="question">تحسّن ١٢ مشاركاً من ١٦ لديهم قياسان، من أصل ٢٠ مسجلاً. أي عبارة تصلح للتقرير؟</field>
         <field name="sequence">1</field>
         <field name="slide_id" ref="slide_2_1"/>
     </record>
     <record id="slide_2_1_q1_a1" model="slide.answer">
-        <field name="text_value">العدد والمدة الزمنية</field>
+        <field name="text_value">تحسّن ٧٥٪ من المسجلين</field>
         <field name="sequence">1</field>
-        <field name="is_correct" eval="True"/>
-        <field name="question_id" ref="slide_2_1_q1"/>
-        <field name="comment">صحيح: لا نعرف كم ورشة، ولا لكم طفلاً، ولا متى.</field>
-    </record>
-    <record id="slide_2_1_q1_a2" model="slide.answer">
-        <field name="text_value">المكان</field>
-        <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_2_1_q1"/>
-        <field name="comment">المكان موجود: طرابلس.</field>
+        <field name="comment">المقام هنا ١٦، بينما عدد المسجلين ٢٠.</field>
+    </record>
+    <record id="slide_2_1_q1_a2" model="slide.answer">
+        <field name="text_value">تحسّن ١٢ من أصحاب القياسين وتعذّر قياس أربعة مسجلين</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_2_1_q1"/>
+        <field name="comment">تحفظ الصياغة المقام وحدود الرصد.</field>
     </record>
     <record id="slide_2_1_q1_a3" model="slide.answer">
-        <field name="text_value">الفئة المستهدفة</field>
+        <field name="text_value">لم يتحسن الأربعة الغائبون</field>
         <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_2_1_q1"/>
-        <field name="comment">الفئة موجودة: الأطفال.</field>
+        <field name="comment">الغياب يترك النتيجة مجهولة.</field>
     </record>
     <record id="slide_2_1_q1_a4" model="slide.answer">
-        <field name="text_value">لا شيء، الهدف ذكي</field>
+        <field name="text_value">أثبت المختبر أن التدريب وحده سبّب التحسن</field>
         <field name="sequence">4</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_2_1_q1"/>
-        <field name="comment">ينقصه العدد والمدة، لذلك لا يمكن قياسه.</field>
+        <field name="comment">لا يعزل القياس أثر العوامل الأخرى.</field>
     </record>
 
     <record id="slide_2_2" model="slide.slide">
-        <field name="name">تحديد الحاجة وفكرة المشروع</field>
+        <field name="name">صياغة الحاجة وحدود الدليل</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">6</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.25</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">كيف تثبت أن المشكلة حقيقية ومهمة.</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<p>الجهة المانحة لا تموّل أفكاراً جميلة فقط، بل تموّل حلولاً لمشكلات حقيقية. قسم «الحاجة» هو المكان الذي تثبت فيه ذلك.</p>
-<h3>ثلاثة أسئلة يجب أن يجيب عنها هذا القسم</h3>
-<ol><li>من المتأثّر بالمشكلة؟ وكم عددهم تقريباً؟</li><li>ما الدليل؟ (أرقام، شهادات، دراسة صغيرة، ملاحظاتك الميدانية)</li><li>لماذا أنت أو فريقك الأقدر على معالجتها؟</li></ol>
-<div style="background:#ecf8f1;border:1px solid #bfe5cf;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#14653f;font-weight:bold;margin:0 0 6px;">مصادر سهلة للأدلة</p><ul><li>استبيان قصير لعشرين شخصاً من الفئة المستهدفة</li><li>تقارير البلدية أو المنظمات المحلية</li><li>عدد المساحات الثقافية في المنطقة</li></ul></div>
-<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>اكتب فقرة من ثلاث جمل عن المشكلة التي يعالجها مشروعك، مع دليل واحد على الأقل.</p></div>
+        <field name="description">وازن بين إفادات الشركاء وبيانات المشاركين قبل تثبيت تصميمك.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#713e59;font-size:1.2rem;font-weight:600;">وازن بين إفادات الشركاء وبيانات المشاركين قبل تثبيت تصميمك.</p>
+<h2>وزن الدليل</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>العينة</dt><dd class="mb-0">١٢ من الرواد</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>صعوبة العودة</dt><dd class="mb-0">٨ إفادات</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>السجل</dt><dd class="mb-0">٣ فعاليات مسائية</dd></div>
+</dl>
+<p>في مقابلات مع ١٢ شخصاً من رواد المسرح ذكر ثمانية صعوبة العودة مساءً. تفيد سجلات القاعة بأن آخر ثلاث فعاليات بدأت بعد السابعة. لم تشمل المقابلات أشخاصاً توقفوا عن الحضور. يقترح الشريك تقديم الورش صباحاً.</p>
+<h2>طريقة العمل</h2>
+<p>تدعم المقابلات فرضية أن التوقيت يعرقل مشاركة بعض الرواد. توثق السجلات وقت البدء فقط. استمع إلى مجموعة لم تصل إليها المقابلات واختبر موعدين قبل الحجز. دوّن ما قد يدفعك إلى العدول عن الحل المقترح.</p>
+<div style="border-right:4px solid #713e59;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">اكتب فقرة حاجة من ٩٠ كلمة، ثم سؤالاً واحداً تسأله للغائبين دون افتراض أن النقل هو العائق. اربط الإجابة بقرار يمكن تغييره قبل التعاقد.</p></div>
+<h2>راجع إجابتك</h2>
+<p>صياغة منضبطة تنسب الثمانية إلى العينة المقابَلة. يمكن السؤال «أي المواعيد تستطيع الالتزام به طوال ست جلسات، وما الذي يصعّب ذلك؟». إذا استبعد العاملون الموعد الصباحي، جرّب موعداً أبكر مساءً قبل تثبيت الجدول.</p>
 </div></field>
     </record>
 
     <record id="slide_2_3" model="slide.slide">
-        <field name="name">الميزانية والجدول الزمني</field>
+        <field name="name">مختبر الميزانية ومراجعة الملف</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">7</field>
         <field name="slide_category">article</field>
-        <field name="completion_time">0.25</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">ميزانية بسيطة وواقعية مرتبطة بالأنشطة.</field>
-        <field name="html_content" type="html"><div dir="rtl" style="text-align:right;font-size:17px;line-height:1.9;">
-<p>الميزانية هي قصة مشروعك بالأرقام. كل بند فيها يجب أن يرتبط بنشاط ذكرته في المقترح.</p>
-<table style="width:100%;border-collapse:collapse;" border="1" cellpadding="8"><tr style="background:#f4f1f4;"><th>البند</th><th>الوحدة</th><th>العدد</th><th>كلفة الوحدة ($)</th><th>المجموع ($)</th></tr><tr><td>مدرّب مسرح</td><td>ورشة</td><td>6</td><td>150</td><td>900</td></tr><tr><td>إيجار قاعة</td><td>يوم</td><td>7</td><td>50</td><td>350</td></tr><tr><td>مواد وأزياء</td><td>مقطوع</td><td>1</td><td>300</td><td>300</td></tr><tr><td>العرض النهائي</td><td>مقطوع</td><td>1</td><td>450</td><td>450</td></tr><tr style="font-weight:bold;"><td colspan="4">المجموع</td><td>2,000</td></tr></table>
-<div style="background:#fdf0f0;border:1px solid #f3c9c9;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#b23b3b;font-weight:bold;margin:0 0 6px;">أخطاء شائعة</p><ul><li>بنود بلا شرح</li><li>تكاليف إدارية مرتفعة جداً</li><li>جدول زمني لا يترك وقتاً للتحضير والتقييم</li></ul></div>
-<div style="background:#fbf8fa;border:1px solid #c9b6c4;border-radius:12px;padding:14px 18px;margin:16px 0;"><p style="color:#714B67;font-weight:bold;margin:0 0 6px;">✍ تمرين (5 دقائق)</p><p>انسخ الجدول أعلاه واملأه لمشروعك. هل يرتبط كل بند بنشاط واضح؟</p></div>
+        <field name="description">سوِّ بنود التكلفة مع سقف المنحة وتدفق النقد ثم راجع الملف كاملاً.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#713e59;font-size:1.2rem;font-weight:600;">سوِّ بنود التكلفة مع سقف المنحة وتدفق النقد ثم راجع الملف كاملاً.</p>
+<h2>تدفق النقد</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>الطلب الأصلي</dt><dd class="mb-0">٢٦٠٠ وحدة</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>المستحق المبكر</dt><dd class="mb-0">٢١٠٠ وحدة</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>الدفعة الأولى</dt><dd class="mb-0">٧٠٪</dd></div>
+</dl>
+<p>تكلّف ست جلسات تدريب ١٥٠ لكل جلسة، وسبعة أيام قاعة ٥٠ لليوم، والمواد ٣٠٠، والإتاحة والنقل ٦٠٠، والعرض ٤٥٠. تدفع الجهة ٧٠٪ من المبلغ المطلوب عند التوقيع والباقي بعد التقرير. يلزم دفع ٢١٠٠ قبل التقرير ولا يوجد رصيد حر.</p>
+<h2>طريقة العمل</h2>
+<p>المجموع ٢٦٠٠، والدفعة الأولى ١٨٢٠، والفجوة النقدية ٢٨٠. وجود هامش تحت سقف المنحة لا يسدد فاتورة مستحقة. اطلب جدول استحقاق مكتوباً أو تمويلاً مرحلياً مؤكداً قبل توقيع العقد. سجّل أثر أي تعديل على المشاركين.</p>
+<div style="border-right:4px solid #713e59;background:#faf7f2;color:#29251f;padding:1rem;margin:1.25rem 0;"><h2>مهمتك</h2><p class="mb-0">سلّم لنفسك ملفاً من صفحتين وجدول تكلفة. اختبر زيادة إيجار اليوم إلى ٧٠ مع استحقاق الزيادة كاملة قبل التقرير. احسب الطلب والدفعة الأولى والفجوة الجديدة، وحدد من يتفاوض ومتى يُعتمد البديل.</p></div>
+<h2>راجع إجابتك</h2>
+<p>يزيد الإيجار ١٤٠، فيصبح الطلب ٢٧٤٠ والدفعة الأولى ١٩١٨ والمستحق المبكر ٢٢٤٠ والفجوة ٣٢٢. امنح ملفك نقطة لكل دليل ظاهر فيه: توقيع الشريك، وحدود العينة، ومقام المؤشر، وحساب الفجوة، وقرار تغطيتها. أعد تحرير كل بند غاب دليله قبل عرض الملف على مراجع.</p>
 </div></field>
     </record>
 
-    <!-- Section 3: الوحدة 3: التقييم -->
     <record id="section_3" model="slide.slide">
-        <field name="name">الوحدة 3: التقييم</field>
+        <field name="name">مراجعة ملف التمويل</field>
         <field name="channel_id" ref="channel"/>
         <field name="is_category" eval="True"/>
         <field name="sequence">8</field>
@@ -167,156 +205,156 @@
     </record>
 
     <record id="slide_3_1" model="slide.slide">
-        <field name="name">الاختبار النهائي</field>
+        <field name="name">اختبار القرارات المهنية</field>
         <field name="channel_id" ref="channel"/>
         <field name="sequence">9</field>
         <field name="slide_category">quiz</field>
-        <field name="completion_time">0.1667</field>
+        <field name="completion_time">0.5</field>
         <field name="is_published" eval="True"/>
         <field name="is_preview" eval="False"/>
-        <field name="description">خمسة أسئلة لمراجعة ما تعلّمته في الدورة.</field>
+        <field name="description">اختر القرار الأنسب لكل حالة، ثم راجع التعليل وقارنه بملف عملك.</field>
     </record>
 
     <record id="slide_3_1_q1" model="slide.question">
-        <field name="question">أيٌّ من الأهداف التالية يُعدّ هدفاً ذكياً (SMART)؟</field>
+        <field name="question">الدعوة تشترط توقيع الشريك. بقي يومان وقد وصل تأكيد شفهي. ما قرار المراجعة؟</field>
         <field name="sequence">1</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q1_a1" model="slide.answer">
-        <field name="text_value">رفع الوعي الثقافي في المجتمع المحلي</field>
+        <field name="text_value">إضافة نقاط إلى الجودة الفنية</field>
         <field name="sequence">1</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q1"/>
-        <field name="comment">عامّ جداً ولا يمكن قياسه.</field>
+        <field name="comment">التقييم الفني يأتي بعد استيفاء شروط الأهلية.</field>
     </record>
     <record id="slide_3_1_q1_a2" model="slide.answer">
-        <field name="text_value">تنظيم 6 ورش مسرحية لـ 60 شاباً في صيدا خلال 4 أشهر</field>
+        <field name="text_value">تسجيل التأكيد الشفهي كتوقيع</field>
         <field name="sequence">2</field>
-        <field name="is_correct" eval="True"/>
-        <field name="question_id" ref="slide_3_1_q1"/>
-        <field name="comment">يحدّد النشاط والفئة والمكان والمدة.</field>
-    </record>
-    <record id="slide_3_1_q1_a3" model="slide.answer">
-        <field name="text_value">دعم الفنانين الشباب قدر الإمكان</field>
-        <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q1"/>
-        <field name="comment">لا يوجد رقم أو مدة.</field>
+        <field name="comment">يختلف الدليلان في شرط الدعوة.</field>
+    </record>
+    <record id="slide_3_1_q1_a3" model="slide.answer">
+        <field name="text_value">تحديد مهلة للحصول على الوثيقة وربط الإرسال بوصولها</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q1"/>
+        <field name="comment">هذا قرار مشروط بدليل يمكن التحقق منه.</field>
     </record>
     <record id="slide_3_1_q1_a4" model="slide.answer">
-        <field name="text_value">إنتاج محتوى فني متميّز</field>
+        <field name="text_value">إرسال الميزانية لتعويض النقص</field>
         <field name="sequence">4</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q1"/>
-        <field name="comment">«متميّز» صفة لا يمكن قياسها.</field>
+        <field name="comment">لا تثبت الميزانية التزام الشريك.</field>
     </record>
 
     <record id="slide_3_1_q2" model="slide.question">
-        <field name="question">ما وظيفة قسم «الحاجة» في المقترح؟</field>
+        <field name="question">أي دليل يختبر أثر مراجعة الأقران على بناء المشهد؟</field>
         <field name="sequence">2</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q2_a1" model="slide.answer">
-        <field name="text_value">إثبات أن المشكلة حقيقية ومهمة</field>
+        <field name="text_value">مقارنة المشهد قبل الملاحظة وبعدها ببطاقة ثابتة</field>
         <field name="sequence">1</field>
         <field name="is_correct" eval="True"/>
         <field name="question_id" ref="slide_3_1_q2"/>
-        <field name="comment">صحيح، مع أدلة وأرقام.</field>
+        <field name="comment">ترصد المقارنة التغير المقصود في الأداء.</field>
     </record>
     <record id="slide_3_1_q2_a2" model="slide.answer">
-        <field name="text_value">عرض السيرة الذاتية للفريق</field>
+        <field name="text_value">إحصاء مقاعد العرض المشغولة</field>
         <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q2"/>
-        <field name="comment">هذا مكانه قسم الفريق.</field>
+        <field name="comment">تقيس المقاعد الوصول إلى جمهور.</field>
     </record>
     <record id="slide_3_1_q2_a3" model="slide.answer">
-        <field name="text_value">تفصيل الميزانية</field>
+        <field name="text_value">تجميع توقيعات الحاضرين</field>
         <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q2"/>
-        <field name="comment">للميزانية قسم مستقل.</field>
+        <field name="comment">يثبت السجل الحضور فقط.</field>
     </record>
 
     <record id="slide_3_1_q3" model="slide.question">
-        <field name="question">كل بند في الميزانية يجب أن...</field>
+        <field name="question">ذكر ثمانية من رواد المسرح الاثني عشر صعوبة العودة. ما الاستنتاج الذي يدعم قراراً؟</field>
         <field name="sequence">3</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q3_a1" model="slide.answer">
-        <field name="text_value">يرتبط بنشاط مذكور في المقترح</field>
+        <field name="text_value">تغيير موعد كل فعاليات المدينة</field>
         <field name="sequence">1</field>
-        <field name="is_correct" eval="True"/>
-        <field name="question_id" ref="slide_3_1_q3"/>
-        <field name="comment">هذا ما يجعل الميزانية مقنعة.</field>
-    </record>
-    <record id="slide_3_1_q3_a2" model="slide.answer">
-        <field name="text_value">يكون مرتفعاً لضمان الاحتياط</field>
-        <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q3"/>
-        <field name="comment">الميزانيات المبالغ فيها تُضعف الثقة.</field>
+        <field name="comment">العينة محدودة ولا تمثل المدينة.</field>
+    </record>
+    <record id="slide_3_1_q3_a2" model="slide.answer">
+        <field name="text_value">اختبار موعد بديل مع رواد حاليين ومنقطعين</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q3"/>
+        <field name="comment">يجمع الاختبار دليلاً من فئة غائبة قبل الحجز.</field>
     </record>
     <record id="slide_3_1_q3_a3" model="slide.answer">
-        <field name="text_value">يُكتب دون شرح</field>
+        <field name="text_value">اعتبار التوقيت السبب الوحيد</field>
         <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q3"/>
-        <field name="comment">الشرح المختصر يساعد المقيّم.</field>
+        <field name="comment">لم تُختبر عوائق أخرى.</field>
     </record>
 
     <record id="slide_3_1_q4" model="slide.question">
-        <field name="question">ما أول خطوة قبل كتابة أي مقترح؟</field>
+        <field name="question">بعد ارتفاع الإيجار صار الطلب ٢٧٤٠ والمستحق المبكر ٢٢٤٠. كم يحتاج الفريق فوق الدفعة الأولى البالغة ٧٠٪؟</field>
         <field name="sequence">4</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q4_a1" model="slide.answer">
-        <field name="text_value">قراءة دعوة التقديم بعناية</field>
+        <field name="text_value">٢٦٠</field>
         <field name="sequence">1</field>
-        <field name="is_correct" eval="True"/>
+        <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q4"/>
-        <field name="comment">لتجيب عن كل ما تطلبه الجهة المانحة.</field>
+        <field name="comment">هذا الهامش حتى سقف المنحة.</field>
     </record>
     <record id="slide_3_1_q4_a2" model="slide.answer">
-        <field name="text_value">إعداد الميزانية</field>
+        <field name="text_value">٨٢٢</field>
         <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q4"/>
-        <field name="comment">الميزانية تأتي بعد تحديد الأنشطة.</field>
+        <field name="comment">هذا مبلغ الدفعة الأخيرة كاملاً.</field>
     </record>
     <record id="slide_3_1_q4_a3" model="slide.answer">
-        <field name="text_value">تصميم الشعار</field>
+        <field name="text_value">٣٢٢</field>
         <field name="sequence">3</field>
-        <field name="is_correct" eval="False"/>
+        <field name="is_correct" eval="True"/>
         <field name="question_id" ref="slide_3_1_q4"/>
-        <field name="comment">ليس ضرورياً للمقترح.</field>
+        <field name="comment">اطرح ١٩١٨ من ٢٢٤٠.</field>
     </record>
 
     <record id="slide_3_1_q5" model="slide.question">
-        <field name="question">لماذا رُفض مقترح المسرح المجتمعي في المحاولة الأولى؟</field>
+        <field name="question">لم يوافق المورّد على تأجيل الدفع، ولا يوجد تمويل مرحلي مؤكد. ماذا تضع في مذكرة القرار؟</field>
         <field name="sequence">5</field>
         <field name="slide_id" ref="slide_3_1"/>
     </record>
     <record id="slide_3_1_q5_a1" model="slide.answer">
-        <field name="text_value">لأنه كان عامّاً وغير قابل للقياس</field>
+        <field name="text_value">تعليق الالتزام وإعادة جدولة الأنشطة مع اختبار أثر التغيير</field>
         <field name="sequence">1</field>
         <field name="is_correct" eval="True"/>
         <field name="question_id" ref="slide_3_1_q5"/>
-        <field name="comment">صحيح، وهذا ما تغيّر في المحاولة الثانية.</field>
+        <field name="comment">يربط القرار الالتزام بالمال المتاح.</field>
     </record>
     <record id="slide_3_1_q5_a2" model="slide.answer">
-        <field name="text_value">لأن الميزانية كانت صغيرة</field>
+        <field name="text_value">اعتماد مبلغ الدفعة الأخيرة كسيولة حاضرة</field>
         <field name="sequence">2</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q5"/>
-        <field name="comment">الميزانية الواقعية نقطة قوة.</field>
+        <field name="comment">الدفع اللاحق لا يغطي الاستحقاق المبكر.</field>
     </record>
     <record id="slide_3_1_q5_a3" model="slide.answer">
-        <field name="text_value">لأن الفريق كان شبابياً</field>
+        <field name="text_value">حذف بند النقل دون مراجعة</field>
         <field name="sequence">3</field>
         <field name="is_correct" eval="False"/>
         <field name="question_id" ref="slide_3_1_q5"/>
-        <field name="comment">لم يكن ذلك سبب الرفض.</field>
+        <field name="comment">قد يقوّض الحذف قدرة المستفيدين على الحضور.</field>
     </record>
 
 </odoo>

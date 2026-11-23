@@ -2,9 +2,21 @@
 
 A hands-on learning project: run **Odoo 17 eLearning** in Docker and ship **Arabic, right-to-left courses as installable Odoo modules**, with tests, CI, backups and a production setup.
 
-> Learning project by NovaTechAI. The two courses are original sample content written for practice.
+> Learning project by NovaTechAI. The three courses are original Arabic content; the cases, organisations and figures are fictional and built for practice.
+
+**Live site:** https://learn.novatechai.site/slides
 
 ![Courses in Odoo](docs/screenshots/01-courses.png)
+
+## The courses
+
+| Course | Module | Focus |
+|---|---|---|
+| تصميم مقترح ثقافي قابل للتمويل والتقييم | `nova_course_proposal_writing` | Funding calls, theory of change, indicators, budget and cash flow |
+| التحرير الثقافي بالذكاء الاصطناعي تحت إشراف بشري | `nova_course_ai_cultural_work` | AI-assisted editing, fact checking, translation review, publishing decisions |
+| إدارة المخاطر الرقمية واستمرارية العمل الثقافي | `nova_course_digital_safety` | Business impact, access reviews, incident response, restore drills |
+
+The optional **Nova Learning Studio** module (`nova_learning_studio`) adds course landing pages (skills, audience, deliverables, FAQ, verified references), illustrated lesson guides, short films with transcripts, and styled lesson sections with hidden model answers. See [docs/07-learning-studio.md](docs/07-learning-studio.md).
 
 ## The 4 projects
 
@@ -52,7 +64,10 @@ Open http://localhost:8069, log in with `admin` / `admin`, change the password, 
 ├── addons/
 │   ├── nova_course_proposal_writing/   # Course 1 as an Odoo module
 │   ├── nova_course_digital_safety/     # Course 2 as an Odoo module
-│   └── nova_course_ai_cultural_work/   # Course 3 as an Odoo module
+│   ├── nova_course_ai_cultural_work/   # Course 3 as an Odoo module
+│   └── nova_learning_studio/           # Landing pages, artwork, films, lesson styling
+├── curriculum/                 # Arabic course scripts and editorial review
+├── tools/                      # Course media builder (diagrams, stills, films)
 ├── ops/
 │   ├── scripts/                # backup.sh, restore.sh, healthcheck.sh
 │   ├── nginx/odoo.conf         # reverse proxy with HTTPS and websockets
@@ -92,6 +107,8 @@ make init
 ```
 
 ثم افتح http://localhost:8069 وادخل بالمستخدم `admin` وكلمة المرور `admin`، وغيّرها فوراً.
+
+The [Learning Studio guide](docs/07-learning-studio.md) covers installation, course artwork, illustrated lessons and film generation.
 
 ## License
 

@@ -21,15 +21,15 @@ down: ## Stop the stack (data is kept in volumes)
 logs: ## Follow Odoo logs
 	$(COMPOSE) logs -f odoo
 
-init: ## Create the database with Arabic and install both courses
-	$(ODOO) -d $(DB) -i $(MODULES) --load-language=ar_001 --without-demo=all --stop-after-init
+init: ## Create the database with Arabic, three courses and the media studio
+	$(ODOO) -d $(DB) -i nova_learning_studio --load-language=ar_001 --without-demo=all --stop-after-init
 	@echo "Open http://localhost:$(ODOO_PORT) and log in with admin / admin (change it!)"
 
 update: ## Re-load course data after you edit the XML
 	$(ODOO) -d $(DB) -u $(MODULES) --stop-after-init
 
 test: ## Run the module tests in a throwaway database
-	$(ODOO) -d test_$(DB) -i $(MODULES) --test-enable --test-tags=/nova_course_proposal_writing,/nova_course_digital_safety,/nova_course_ai_cultural_work --without-demo=all --stop-after-init --log-level=test
+	$(ODOO) -d test_$(DB) -i nova_learning_studio --test-enable --test-tags=/nova_learning_studio,/nova_course_proposal_writing,/nova_course_digital_safety,/nova_course_ai_cultural_work --without-demo=all --stop-after-init --log-level=test
 	$(COMPOSE) exec db dropdb -U $(POSTGRES_USER) --if-exists test_$(DB)
 
 shell: ## Open an Odoo Python shell on the database

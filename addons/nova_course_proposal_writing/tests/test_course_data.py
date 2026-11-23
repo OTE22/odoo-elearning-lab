@@ -18,7 +18,7 @@ class TestCourseData(TransactionCase):
     def test_structure(self):
         slides = self.channel.slide_ids
         self.assertEqual(len(slides.filtered("is_category")), 3, "expected 3 units")
-        self.assertEqual(len(slides.filtered(lambda s: not s.is_category)), 6)
+        self.assertEqual(len(slides.filtered(lambda s: not s.is_category)), 9)
 
     def test_every_lesson_belongs_to_a_unit(self):
         for slide in self.channel.slide_ids.filtered(lambda s: not s.is_category):
@@ -26,7 +26,7 @@ class TestCourseData(TransactionCase):
 
     def test_quizzes_are_valid(self):
         questions = self.channel.slide_ids.question_ids
-        self.assertEqual(len(questions), 6)
+        self.assertEqual(len(questions), 8)
         for question in questions:
             self.assertGreaterEqual(len(question.answer_ids), 2)
             self.assertEqual(len(question.answer_ids.filtered("is_correct")), 1,
