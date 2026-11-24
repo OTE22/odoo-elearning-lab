@@ -357,4 +357,61 @@
         <field name="comment">قد يقوّض الحذف قدرة المستفيدين على الحضور.</field>
     </record>
 
+
+    <!-- Advanced lab (2026 update): placed in unit 3 before the capstone. -->
+    <record id="slide_lab" model="slide.slide">
+        <field name="name">مختبر متقدم · التمويل المشترك وسجل المخاطر</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">105</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.5</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="True"/>
+        <field name="description">ابنِ خطة تمويل مشترك تفصل النقد عن المساهمة العينية، واختبرها أمام أسوأ الاحتمالات قبل التوقيع.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#713e59;font-size:1.2rem;font-weight:600;">ابنِ خطة تمويل مشترك تفصل النقد عن المساهمة العينية، واختبرها أمام أسوأ الاحتمالات قبل التوقيع.</p>
+<h2>مصادر تمويل الكلفة الكلية</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>المنحة</dt><dd class="mb-0">٦٠٪ من ٥٠٠٠ = ٣٠٠٠</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>مساهمة عينية</dt><dd class="mb-0">قاعة بقيمة ٨٠٠</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>نقد غير مؤكد</dt><dd class="mb-0">راعٍ ٧٠٠ وتذاكر ٥٠٠</dd></div>
+</dl>
+<p>يكلّف المشروع ٥٠٠٠ وحدة. لا تتجاوز المنحة الأوروبية الافتراضية ٦٠٪ من الكلفة الكلية، أي ٣٠٠٠ وحدة، وتُصرف باليورو فيما تُدفع التكاليف بالعملة المحلية. تقدّم البلدية القاعة مجاناً وتقدّر قيمتها بـ٨٠٠ وحدة. وعد راعٍ محلي بـ٧٠٠ وحدة نقداً ولم يوقّع بعد، ويتوقع الفريق ٥٠٠ وحدة من التذاكر. في السيناريو الافتراضي للتمرين، قد تنخفض قيمة اليورو ١٠٪ أمام العملة المحلية خلال مدة المشروع.</p>
+</div></field>
+    </record>
+
+    <record id="slide_3_1_q_lab" model="slide.question">
+        <field name="question">الكلفة الكلية ٥٠٠٠ وسقف المنحة ٦٠٪ منها. قلّص الفريق المشروع إلى ٤٠٠٠. ما أقصى منحة يمكن طلبها؟</field>
+        <field name="sequence">10</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q_lab_a1" model="slide.answer">
+        <field name="text_value">٣٠٠٠</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q_lab"/>
+        <field name="comment">السقف نسبة من الكلفة الجديدة لا من القديمة.</field>
+    </record>
+    <record id="slide_3_1_q_lab_a2" model="slide.answer">
+        <field name="text_value">٢٤٠٠</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q_lab"/>
+        <field name="comment">٦٠٪ من ٤٠٠٠ تساوي ٢٤٠٠.</field>
+    </record>
+    <record id="slide_3_1_q_lab_a3" model="slide.answer">
+        <field name="text_value">٢٠٠٠</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q_lab"/>
+        <field name="comment">هذه ٥٠٪ من الكلفة الجديدة.</field>
+    </record>
+    <record id="slide_3_1_q_lab_a4" model="slide.answer">
+        <field name="text_value">٣٢٠٠</field>
+        <field name="sequence">4</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q_lab"/>
+        <field name="comment">هذا الباقي بعد طرح القاعة، وهو ليس سقف المنحة.</field>
+    </record>
+
 </odoo>

@@ -17,6 +17,8 @@ A hands-on learning project: run **Odoo 17 eLearning** in Docker and ship **Arab
 | التحرير الثقافي بالذكاء الاصطناعي تحت إشراف بشري | `nova_course_ai_cultural_work` | AI-assisted editing, fact checking, translation review, publishing decisions |
 | إدارة المخاطر الرقمية واستمرارية العمل الثقافي | `nova_course_digital_safety` | Business impact, access reviews, incident response, restore drills |
 
+Each course ends with a 2026 **advanced lab** (co-financing and funding risk; AI disclosure under the EU AI Act; deepfake payment fraud) and ships Excel job aids, a competency map, a readiness check, retrieval cards and a bilingual glossary. The design rationale and impact-measurement plan are in [docs/08-learning-design.md](docs/08-learning-design.md).
+
 The optional **Nova Learning Studio** module (`nova_learning_studio`) adds course landing pages (skills, audience, deliverables, FAQ, verified references), illustrated lesson guides, short films with transcripts, and styled lesson sections with hidden model answers. See [docs/07-learning-studio.md](docs/07-learning-studio.md).
 
 ## The 4 projects

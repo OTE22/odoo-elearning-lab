@@ -370,4 +370,61 @@
         <field name="comment">التوثيق وحده لا يصحح الملف.</field>
     </record>
 
+
+    <!-- Advanced lab (2026 update): placed in unit 3 before the capstone. -->
+    <record id="slide_lab" model="slide.slide">
+        <field name="name">مختبر متقدم · الإفصاح عن الذكاء الاصطناعي ووسم المحتوى</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">105</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.5</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="True"/>
+        <field name="description">قرّر متى تُفصح عن استخدام الذكاء الاصطناعي وكيف، وفق سياسة المؤسسة وقواعد الشفافية الأوروبية النافذة.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#324b77;font-size:1.2rem;font-weight:600;">قرّر متى تُفصح عن استخدام الذكاء الاصطناعي وكيف، وفق سياسة المؤسسة وقواعد الشفافية الأوروبية النافذة.</p>
+<h2>ثلاثة استخدامات قبل النشر</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>نص</dt><dd class="mb-0">خبر مولَّد راجعته المحررة</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>صورة</dt><dd class="mb-0">ملصق يُظهر فناناً راحلاً</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>صوت</dt><dd class="mb-0">دليل صوتي بصوت اصطناعي</dd></div>
+</dl>
+<p>تنشر مؤسسة افتراضية بالعربية والإنجليزية، ويزور موقعها جمهور من أوروبا. يريد الفريق ثلاثة استخدامات: (أ) خبر عن افتتاح المعرض صاغته أداة ذكاء اصطناعي، ثم راجعته المحررة، وتتحمل المؤسسة مسؤولية نشره. (ب) ملصق ترويجي مولَّد بالكامل يُظهر الفنان الراحل واقفاً في القاعة كأنها صورة حقيقية. (ج) دليل صوتي بصوت اصطناعي لا يقلّد شخصاً معروفاً، يقرأ نصاً كتبه القيّم.</p>
+</div></field>
+    </record>
+
+    <record id="slide_3_2_q_lab" model="slide.question">
+        <field name="question">خبر صاغته أداة ذكاء اصطناعي وراجعته المحررة، وتتحمل المؤسسة مسؤولية نشره. متى يُعفى من واجب الإفصاح وفق المادة ٥٠؟</field>
+        <field name="sequence">10</field>
+        <field name="slide_id" ref="slide_3_2"/>
+    </record>
+    <record id="slide_3_2_q_lab_a1" model="slide.answer">
+        <field name="text_value">عند تحقق الشرطين معاً: مراجعة بشرية أو ضبط تحريري، ومسؤول تحريري عن النشر</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_2_q_lab"/>
+        <field name="comment">الاستثناء يتطلب الشرطين معاً.</field>
+    </record>
+    <record id="slide_3_2_q_lab_a2" model="slide.answer">
+        <field name="text_value">بمجرد أن تقرأ المحررة النص</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q_lab"/>
+        <field name="comment">المراجعة وحدها لا تكفي دون مسؤولية تحريرية عن النشر.</field>
+    </record>
+    <record id="slide_3_2_q_lab_a3" model="slide.answer">
+        <field name="text_value">إذا كان الخبر قصيراً</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q_lab"/>
+        <field name="comment">طول النص ليس معياراً في المادة.</field>
+    </record>
+    <record id="slide_3_2_q_lab_a4" model="slide.answer">
+        <field name="text_value">إذا ذُكر اسم الأداة في الملاحظات الداخلية</field>
+        <field name="sequence">4</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_2_q_lab"/>
+        <field name="comment">السجل الداخلي ليس إفصاحاً ولا شرطاً للاستثناء.</field>
+    </record>
+
 </odoo>

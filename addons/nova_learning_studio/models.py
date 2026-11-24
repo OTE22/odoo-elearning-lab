@@ -8,6 +8,9 @@ class SlideChannel(models.Model):
     # Course landing page: skills, audience, prerequisites, deliverables,
     # FAQ and verified external references (see data/landing.xml).
     nova_landing = fields.Json(copy=False, readonly=True)
+    # Learning-design layer: competencies, readiness check, retrieval cards,
+    # glossary, job aids and impact plan (see data/design.xml).
+    nova_design = fields.Json(copy=False, readonly=True)
 
 
 class Slide(models.Model):

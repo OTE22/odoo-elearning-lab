@@ -4,10 +4,10 @@
     "summary": "Advanced Arabic workshop with case exercises and assessed decisions",
     "description": """
 Installs a complete Arabic course in Odoo eLearning:
-3 units, 4 article lessons, 1 lesson quiz and a 4-question final quiz.
+3 units, 5 article lessons (including an advanced lab), 1 lesson quiz and a 5-question final quiz.
 Learners assess access, rehearse incident response and validate service recovery.
 """,
-    "version": "17.0.3.0.0",
+    "version": "17.0.4.0.0",
     "category": "Website/eLearning",
     "author": "NovaTechAI",
     "website": "https://www.linkedin.com/in/OTE22",

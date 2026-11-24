@@ -290,4 +290,61 @@
         <field name="comment">يؤدي ذلك إلى فقد خمسة رموز جديدة.</field>
     </record>
 
+
+    <!-- Advanced lab (2026 update): placed in unit 3 before the capstone. -->
+    <record id="slide_lab" model="slide.slide">
+        <field name="name">مختبر متقدم · الاحتيال بالتزييف العميق وطلبات الدفع العاجلة</field>
+        <field name="channel_id" ref="channel"/>
+        <field name="sequence">95</field>
+        <field name="slide_category">article</field>
+        <field name="completion_time">0.5</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_preview" eval="True"/>
+        <field name="description">صمّم إجراء تحقق يصمد أمام صوت أو فيديو مزيّف يطلب تحويلاً عاجلاً.</field>
+        <field name="html_content" type="html"><div dir="rtl" lang="ar" style="max-width:48rem;margin:auto;line-height:1.85;text-align:right;overflow-wrap:break-word;">
+<p style="color:#155852;font-size:1.2rem;font-weight:600;">صمّم إجراء تحقق يصمد أمام صوت أو فيديو مزيّف يطلب تحويلاً عاجلاً.</p>
+<h2>إشارات الطلب المريب</h2>
+<dl class="row mx-0" style="background:#f0f4f5;color:#20343c;border-radius:.75rem;padding:.75rem;">
+<div class="col-12 col-sm-4 py-1"><dt>القناة</dt><dd class="mb-0">مكالمة فيديو جماعية</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>الطلب</dt><dd class="mb-0">تحويل ٤٨ ألفاً لمورّد جديد</dd></div>
+<div class="col-12 col-sm-4 py-1"><dt>الضغط</dt><dd class="mb-0">عاجل وسري</dd></div>
+</dl>
+<p>قبل افتتاح مهرجان افتراضي بثلاثة أيام، تصل إلى المسؤولة المالية رسالة من «المديرة التنفيذية» تدعوها إلى مكالمة فيديو مع «المديرة» و«المستشار القانوني». الوجوه والأصوات مألوفة. يُطلب تحويل ٤٨ ألف وحدة اليوم إلى حساب مورّد جديد لحجز معدات الصوت، مع التشديد على السرية «حتى لا يتسرب خبر التعاقد».</p>
+</div></field>
+    </record>
+
+    <record id="slide_3_1_q_lab" model="slide.question">
+        <field name="question">طلب تحويل عاجل لمورّد جديد وصل عبر مكالمة فيديو تبدو فيها المديرة حقيقية. أي إجراء يحسم صحة الطلب؟</field>
+        <field name="sequence">10</field>
+        <field name="slide_id" ref="slide_3_1"/>
+    </record>
+    <record id="slide_3_1_q_lab_a1" model="slide.answer">
+        <field name="text_value">الاتصال بالمديرة على رقم مسجّل مسبقاً وطلب موافقة معتمد ثانٍ</field>
+        <field name="sequence">1</field>
+        <field name="is_correct" eval="True"/>
+        <field name="question_id" ref="slide_3_1_q_lab"/>
+        <field name="comment">قناة مستقلة وتوقيع ثانٍ لا يتحكم فيهما المهاجم.</field>
+    </record>
+    <record id="slide_3_1_q_lab_a2" model="slide.answer">
+        <field name="text_value">سؤال المتصلة عن معلومة شخصية تعرفها المديرة</field>
+        <field name="sequence">2</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q_lab"/>
+        <field name="comment">قد تكون المعلومة منشورة أو مسرّبة.</field>
+    </record>
+    <record id="slide_3_1_q_lab_a3" model="slide.answer">
+        <field name="text_value">التدقيق في جودة الصورة والصوت</field>
+        <field name="sequence">3</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q_lab"/>
+        <field name="comment">التزييف قد يكون مقنعاً، والعين ليست أداة تحقق.</field>
+    </record>
+    <record id="slide_3_1_q_lab_a4" model="slide.answer">
+        <field name="text_value">إرسال بريد تأكيد إلى العنوان الذي وصل منه الطلب</field>
+        <field name="sequence">4</field>
+        <field name="is_correct" eval="False"/>
+        <field name="question_id" ref="slide_3_1_q_lab"/>
+        <field name="comment">القناة نفسها قد تكون مخترقة.</field>
+    </record>
+
 </odoo>

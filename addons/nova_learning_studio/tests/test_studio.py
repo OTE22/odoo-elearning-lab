@@ -58,7 +58,39 @@ class TestMediaPresentation(TransactionCase):
                 "nova_learning_studio.course_landing", {"channel": course}
             )
             tree = html.fromstring(page)
-            self.assertEqual(len(tree.xpath("//details/summary")), len(landing["faq"]))
+            self.assertEqual(len(tree.xpath("//section[@id='nova-faq']//details/summary")), len(landing["faq"]))
             links = tree.xpath("//a[@target='_blank']")
             self.assertEqual(len(links), len(landing["references"]))
             self.assertTrue(all("noopener" in a.get("rel", "") for a in links))
+
+    def test_learning_design_layer(self):
+        root = Path(get_module_path("nova_learning_studio"))
+        courses = self.env["slide.channel"].search([("nova_design", "!=", False)])
+        self.assertEqual(len(courses), 3)
+        bloom = {"تذكّر", "فهم", "تطبيق", "تحليل", "تقييم", "إبداع"}
+        for course in courses:
+            design = course.nova_design
+            self.assertEqual(len(design["competencies"]), 4)
+            self.assertTrue(all(c["level"] in bloom for c in design["competencies"]))
+            self.assertEqual(len(design["diagnostic"]), 5)
+            self.assertEqual(len(design["flashcards"]), 6)
+            self.assertEqual(len(design["glossary"]), 10)
+            self.assertEqual(len(design["evaluation"]), 4)
+            for item in design["downloads"]:
+                path = root / item["file"].split("/nova_learning_studio/", 1)[1]
+                self.assertTrue(path.is_file(), item["file"])
+                self.assertEqual(path.suffix, ".xlsx")
+            top = html.fromstring(self.env["ir.ui.view"]._render_template(
+                "nova_learning_studio.course_top", {"channel": course}))
+            self.assertEqual(len(top.xpath("//input[@type='checkbox']")), 5)
+            self.assertTrue(top.xpath("//output[@aria-live='polite']"))
+            for anchor in top.xpath("//nav//a/@href"):
+                self.assertTrue(anchor.startswith("#nova-"), anchor)
+            page = html.fromstring(self.env["ir.ui.view"]._render_template(
+                "nova_learning_studio.course_landing", {"channel": course}))
+            self.assertEqual(len(page.xpath("//details[contains(@class,'nova-card')]")), 6)
+            self.assertEqual(len(page.xpath("//section[@id='nova-glossary']//tbody/tr")), 10)
+            self.assertEqual(len(page.xpath("//a[@download]")), len(design["downloads"]))
+            ids = set(page.xpath("//@id")) | set(top.xpath("//@id"))
+            for anchor in top.xpath("//nav//a/@href"):
+                self.assertIn(anchor[1:], ids, f"{course.name}: broken in-page link {anchor}")

@@ -172,3 +172,121 @@
 .nova-reveal > summary { cursor: pointer; padding: .8rem 0; font-weight: 700; color: #285971; }
 .nova-reveal > summary:focus-visible { outline: 3px solid #147993; outline-offset: 3px; }
 .nova-reveal[open] { background: #f6faf8; border-style: solid; }
+
+/* =========================================================
+   2026 learning-design layer
+   ========================================================= */
+
+/* Catalog: how you learn */
+.nova-hero { padding-bottom: clamp(2.5rem, 6vw, 4rem); }
+.nova-path {
+    background: #fbf8f4; border-bottom: 1px solid #ece4dc;
+    padding: clamp(2rem, 5vw, 3rem) 0 calc(40px + 2.5rem);
+    font-family: system-ui, Tahoma, sans-serif; color: #172a36;
+    h2 { font-size: clamp(1.3rem, 2.6vw, 1.75rem); font-weight: 700; margin-bottom: 1.2rem; }
+}
+.nova-path-steps {
+    list-style: none; padding: 0; margin: 0 0 1.4rem; counter-reset: step;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr)); gap: .8rem;
+    li { counter-increment: step; background: #fff; border: 1px solid #ece4dc; border-radius: .9rem;
+         padding: 1rem 1rem 1.1rem; display: flex; flex-direction: column; gap: .3rem; position: relative; }
+    li::before { content: counter(step, arabic-indic); width: 2rem; height: 2rem; border-radius: 50%;
+                 display: grid; place-items: center; background: #753953; color: #fff; font-weight: 700; margin-bottom: .3rem; }
+    strong { font-size: 1.02rem; }
+    span { color: #4a5a62; font-size: .92rem; line-height: 1.7; }
+}
+.nova-principles {
+    display: flex; flex-wrap: wrap; gap: .5rem; margin: 0;
+    li { border: 1px solid #d9c8d1; color: #5d2c44; background: #fff; border-radius: 2rem; padding: .3rem .85rem; font-size: .86rem; font-weight: 600; }
+}
+
+/* Course page: in-page navigation */
+.nova-jump {
+    display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem;
+    a { border: 1px solid var(--nova-rule, #d6dfe0); border-radius: 2rem; padding: .35rem .9rem; font-size: .88rem;
+        color: var(--nova-accent); background: #fff; text-decoration: none; font-weight: 600; }
+    a:hover { background: var(--nova-paper); }
+    a:focus-visible { outline: 3px solid var(--nova-accent); outline-offset: 2px; }
+}
+.nova-anchor { display: block; scroll-margin-top: 6rem; }
+.nova-panel[id] { scroll-margin-top: 6rem; }
+
+/* Readiness check */
+.nova-ready {
+    fieldset { display: grid; gap: .5rem; margin: .4rem 0 1rem; border: 0; padding: 0; }
+    label { display: flex; gap: .7rem; align-items: flex-start; padding: .55rem .75rem; border-radius: .6rem;
+            background: var(--nova-paper); cursor: pointer; line-height: 1.7; }
+    input { flex: none; margin-top: .35rem; width: 1.15rem; height: 1.15rem; accent-color: var(--nova-accent); }
+    .nova-ready-result:not(:empty) { display: block; margin-top: .9rem; padding: .8rem 1rem; border-radius: .7rem;
+            background: #eef7f2; border: 1px solid #bfe0cc; font-weight: 600; }
+}
+.nova-btn { background: var(--nova-accent); color: #fff; border-radius: .6rem; padding: .55rem 1.2rem; font-weight: 650; }
+.nova-btn:hover, .nova-btn:focus-visible { color: #fff; filter: brightness(1.1); }
+.nova-btn:focus-visible { outline: 3px solid #147993; outline-offset: 2px; }
+
+/* Shared tables (competencies, glossary) */
+.nova-competencies table, .nova-glossary table {
+    width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--nova-rule); border-radius: .8rem; overflow: hidden;
+    th, td { padding: .6rem .8rem; text-align: start; vertical-align: top; border-top: 1px solid var(--nova-rule); }
+    thead th { background: var(--nova-paper); border-top: 0; font-weight: 700; }
+}
+.nova-glossary tbody th { font-weight: 700; color: var(--nova-accent); white-space: nowrap; }
+.nova-glossary td[dir="ltr"] { text-align: left; color: #3b4a52; font-size: .92rem; white-space: nowrap; }
+.nova-level { display: inline-block; padding: .15rem .65rem; border-radius: 2rem; background: var(--nova-accent); color: #fff;
+              font-size: .82rem; font-weight: 700; white-space: nowrap; }
+
+/* Downloads */
+.nova-downloads ul { list-style: none; padding: 0; display: grid; gap: .7rem; }
+.nova-downloads li { display: flex; gap: .9rem; align-items: center; padding: .85rem 1rem; border-radius: .8rem;
+                     border: 1px solid var(--nova-rule); background: #fff; margin: 0; }
+.nova-downloads li > i { font-size: 1.8rem; color: #1d6f42; }
+.nova-downloads li > div { display: flex; flex-direction: column; flex: 1; }
+.nova-downloads a { font-weight: 700; color: var(--nova-accent); text-decoration: none; }
+.nova-downloads a::after { content: " ⤓"; }
+.nova-downloads a:hover { text-decoration: underline; }
+.nova-downloads a:focus-visible { outline: 3px solid var(--nova-accent); outline-offset: 2px; }
+.nova-format { font-size: .78rem; font-weight: 700; color: #1d6f42; border: 1px solid #b9dcc6; border-radius: .4rem; padding: .1rem .45rem; }
+
+/* Retrieval cards */
+.nova-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: .8rem; }
+.nova-card {
+    border-radius: .9rem; border: 1px solid var(--nova-rule); background: var(--nova-paper); padding: 0; min-height: 7.5rem;
+    summary { list-style: none; cursor: pointer; padding: 1rem 1.1rem; font-weight: 650; line-height: 1.7; min-height: 7.5rem;
+              display: flex; flex-direction: column; justify-content: space-between; gap: .6rem; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "اضغط لكشف الإجابة"; font-size: .78rem; font-weight: 600; color: var(--nova-accent); }
+    summary:focus-visible { outline: 3px solid var(--nova-accent); outline-offset: 2px; border-radius: .9rem; }
+    p { margin: 0; padding: .9rem 1.1rem 1.1rem; border-top: 1px dashed var(--nova-rule); background: #fff;
+        border-radius: 0 0 .9rem .9rem; line-height: 1.8; }
+}
+.nova-card[open] { border-color: var(--nova-accent); }
+.nova-card[open] summary::after { content: "الإجابة"; }
+
+/* Impact plan */
+.nova-impact ol { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: .7rem; counter-reset: lvl; }
+.nova-impact li { counter-increment: lvl; margin: 0; padding: .9rem 1rem; border-radius: .8rem; background: var(--nova-paper);
+                  border-top: 4px solid var(--nova-accent); display: flex; flex-direction: column; gap: .25rem; }
+.nova-impact li strong::before { content: "المستوى " counter(lvl, arabic-indic) " · "; color: var(--nova-accent); }
+.nova-impact li span { font-size: .92rem; color: #3b4a52; line-height: 1.75; }
+
+/* Lessons: objective banner and extra blocks (classes added by studio.js) */
+.nova-objective {
+    display: flex; flex-wrap: wrap; gap: .5rem .8rem; align-items: center; padding: .85rem 1.1rem; border-radius: .9rem;
+    background: #172a36; color: #fff; font-weight: 600; line-height: 1.8; margin-block: 1rem;
+    > strong { display: none; }
+}
+.nova-objective-chip { flex: none; background: #f2c879; color: #172a36; border-radius: 2rem; padding: .15rem .75rem; font-size: .82rem; font-weight: 800; }
+.nova-block--reading { background: #f4f1fa; border-color: #dcd3ee; }
+.nova-block--reading > h3::before { content: "\f02d"; }
+.nova-block--rubric { background: #fff; border-inline-start: 5px solid #285971; }
+.nova-block--rubric > h3::before { content: "\f0ae"; }
+
+@media (max-width: 575px) {
+    .nova-glossary table, .nova-competencies table { font-size: .9rem; }
+    .nova-glossary td[dir="ltr"], .nova-glossary tbody th { white-space: normal; }
+    .nova-downloads li { align-items: flex-start; }
+    .nova-format { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .nova-card, .nova-jump a { transition: border-color .15s ease, background-color .15s ease; }
+}

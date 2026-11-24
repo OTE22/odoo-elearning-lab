@@ -34,6 +34,38 @@
     <xpath expr="//div[@t-field='channel.description']" position="after">
       <t t-if="channel.nova_landing" t-call="nova_learning_studio.course_stats"/>
     </xpath>
+    <xpath expr="//t[@t-call='website_slides.course_slides_list']" position="before">
+      <t t-if="channel.nova_design" t-call="nova_learning_studio.course_top"/>
+    </xpath>
+  </template>
+
+  <!-- Top of the course tab: in-page navigation and a one-minute readiness check. -->
+  <template id="course_top">
+    <nav class="nova-jump" dir="rtl" aria-label="أقسام صفحة الدورة">
+      <a href="#nova-ready">تشخيص الجاهزية</a>
+      <a href="#nova-curriculum">المنهج</a>
+      <a href="#nova-competencies">الكفاءات</a>
+      <a href="#nova-tools">أدوات العمل</a>
+      <a href="#nova-review">بطاقات المراجعة</a>
+      <a href="#nova-glossary">المسرد</a>
+      <a href="#nova-faq">أسئلة شائعة</a>
+    </nav>
+    <section id="nova-ready" class="nova-panel nova-ready" dir="rtl"
+             data-low="ابدأ من الوحدة الأولى وتابع الدروس بالترتيب؛ كل درس يبني على سابقه."
+             data-mid="ابدأ من الوحدة الثانية، وراجع مفاهيم الوحدة الأولى بسرعة عبر بطاقات المراجعة أدناه."
+             data-high="أنت جاهز للمستوى المتقدم: ابدأ بالمختبر المتقدم ثم المشروع الختامي، وعد إلى الدروس عند الحاجة.">
+      <h2>هل أنت مستعد؟ تشخيص في دقيقة</h2>
+      <p class="nova-muted">ضع علامة على ما تستطيع فعله الآن بثقة، لنقترح عليك نقطة البداية المناسبة.</p>
+      <fieldset>
+        <legend class="visually-hidden">ما تستطيع فعله الآن</legend>
+        <label t-foreach="channel.nova_design['diagnostic']" t-as="statement">
+          <input type="checkbox" class="form-check-input"/> <span t-esc="statement"/>
+        </label>
+      </fieldset>
+      <button type="button" class="btn nova-btn">اقترح نقطة البداية</button>
+      <output class="nova-ready-result" aria-live="polite"/>
+    </section>
+    <span id="nova-curriculum" class="nova-anchor"/>
   </template>
 
   <!-- Course header: key facts and skills, like a professional course landing page. -->
@@ -54,9 +86,61 @@
   <!-- Landing sections below the syllabus. -->
   <template id="course_landing">
     <t t-set="landing" t-value="channel.nova_landing"/>
+    <t t-set="design" t-value="channel.nova_design"/>
+    <section t-if="design" id="nova-competencies" class="nova-panel nova-competencies" dir="rtl">
+      <h2>خريطة الكفاءات</h2>
+      <p class="nova-muted">كل كفاءة مرتبطة بمستوى معرفي وفق تصنيف بلوم المعدَّل، وبدليل عملي تسلّمه في الدورة.</p>
+      <table>
+        <thead><tr><th scope="col">الكفاءة</th><th scope="col">المستوى</th><th scope="col">دليل الإتقان</th></tr></thead>
+        <tbody>
+          <tr t-foreach="design['competencies']" t-as="comp">
+            <td t-esc="comp['title']"/>
+            <td><span class="nova-level" t-esc="comp['level']"/></td>
+            <td t-esc="comp['evidence']"/>
+          </tr>
+        </tbody>
+      </table>
+    </section>
     <section class="nova-panel nova-deliverables" dir="rtl">
       <h2>ما ستسلّمه في نهاية الدورة</h2>
       <ol><li t-foreach="landing['deliverables']" t-as="item" t-esc="item"/></ol>
+    </section>
+    <section t-if="design" id="nova-tools" class="nova-panel nova-downloads" dir="rtl">
+      <h2>أدوات عمل قابلة للتنزيل</h2>
+      <p class="nova-muted">ملفات Excel جاهزة بالعربية، فيها معادلات وقوائم اختيار ومثال محلول من الدورة نفسها.</p>
+      <ul>
+        <li t-foreach="design['downloads']" t-as="item">
+          <i class="fa fa-file-excel-o" aria-hidden="true"/>
+          <div>
+            <a t-att-href="item['file']" download="" t-esc="item['title']"/>
+            <span class="nova-muted" t-esc="item['desc']"/>
+          </div>
+          <span class="nova-format">Excel</span>
+        </li>
+      </ul>
+    </section>
+    <section t-if="design" id="nova-review" class="nova-panel nova-flashcards" dir="rtl">
+      <h2>بطاقات المراجعة</h2>
+      <p class="nova-muted">استرجع الإجابة من ذاكرتك أولاً، ثم اضغط البطاقة لتتحقق. عُد إليها بعد أيام لتثبيت ما تعلّمت.</p>
+      <div class="nova-cards">
+        <details t-foreach="design['flashcards']" t-as="card" class="nova-card">
+          <summary t-esc="card[0]"/>
+          <p t-esc="card[1]"/>
+        </details>
+      </div>
+    </section>
+    <section t-if="design" id="nova-glossary" class="nova-panel nova-glossary" dir="rtl">
+      <h2>المسرد ثنائي اللغة</h2>
+      <table>
+        <thead><tr><th scope="col">المصطلح</th><th scope="col">بالإنجليزية</th><th scope="col">المعنى</th></tr></thead>
+        <tbody>
+          <tr t-foreach="design['glossary']" t-as="term">
+            <th scope="row" t-esc="term[0]"/>
+            <td dir="ltr" lang="en" t-esc="term[1]"/>
+            <td t-esc="term[2]"/>
+          </tr>
+        </tbody>
+      </table>
     </section>
     <div class="nova-two-col" dir="rtl">
       <section class="nova-panel">
@@ -72,7 +156,17 @@
       <h2>من الممارسة المهنية</h2>
       <p t-esc="landing['context']"/>
     </section>
-    <section class="nova-panel nova-faq" dir="rtl">
+    <section t-if="design" class="nova-panel nova-impact" dir="rtl">
+      <h2>كيف نقيس أثر الدورة؟</h2>
+      <p class="nova-muted">خطة قياس على مستويات نموذج كيركباتريك الأربعة، من رضا المتعلّم إلى أثر عمله في المؤسسة.</p>
+      <ol>
+        <li t-foreach="design['evaluation']" t-as="level">
+          <strong t-esc="level[0]"/>
+          <span t-esc="level[1]"/>
+        </li>
+      </ol>
+    </section>
+    <section id="nova-faq" class="nova-panel nova-faq" dir="rtl">
       <h2>أسئلة شائعة</h2>
       <details t-foreach="landing['faq']" t-as="qa">
         <summary t-esc="qa[0]"/>
@@ -104,6 +198,25 @@
             <li>اختبارات تشرح كل إجابة</li>
             <li>مراجع رسمية موثّقة</li>
             <li>مجانية ومتاحة للجميع</li>
+          </ul>
+        </div>
+      </section>
+      <section class="nova-path" dir="rtl" lang="ar" aria-labelledby="nova-path-title">
+        <div class="container">
+          <h2 id="nova-path-title">كيف تتعلّم معنا</h2>
+          <ol class="nova-path-steps">
+            <li><strong>شخّص جاهزيتك</strong><span>تشخيص في دقيقة يقترح عليك نقطة البداية.</span></li>
+            <li><strong>تعلّم من حالة</strong><span>كل درس قرار مهني حقيقي في مؤسسة ثقافية.</span></li>
+            <li><strong>طبّق وقارن</strong><span>مهمة تكتبها بنفسك، ثم إجابة مقترحة تُكشف بعد المحاولة.</span></li>
+            <li><strong>راجع وثبّت</strong><span>بطاقات مراجعة، واختبارات تشرح كل خيار، ومسرد ثنائي اللغة.</span></li>
+            <li><strong>سلّم مشروعاً</strong><span>مشروع ختامي بسلّم تقدير، وأدوات عمل Excel تأخذها إلى مؤسستك.</span></li>
+          </ol>
+          <ul class="nova-principles list-unstyled" aria-label="مبادئ التصميم">
+            <li>التعلّم القائم على السيناريو</li>
+            <li>الممارسة الاسترجاعية</li>
+            <li>مبادئ التصميم الشامل للتعلّم UDL 3.0</li>
+            <li>واجهة تراعي إرشادات الوصول WCAG 2.2</li>
+            <li>قياس الأثر بنموذج كيركباتريك</li>
           </ul>
         </div>
       </section>
@@ -142,6 +255,8 @@
           <li><i class="fa fa-file-text-o" aria-hidden="true"/> <t t-esc="channel.nbr_article"/> دروس بحالات ومهام تطبيقية</li>
           <li><i class="fa fa-question-circle-o" aria-hidden="true"/> <t t-esc="channel.nbr_quiz"/> اختبارات مع تعليل لكل خيار</li>
           <li><i class="fa fa-play-circle-o" aria-hidden="true"/> فيلم قصير مع نص مكتوب</li>
+          <li t-if="channel.nova_design"><i class="fa fa-file-excel-o" aria-hidden="true"/> <t t-esc="len(channel.nova_design['downloads'])"/> أدوات عمل Excel قابلة للتنزيل</li>
+          <li t-if="channel.nova_design"><i class="fa fa-clone" aria-hidden="true"/> <t t-esc="len(channel.nova_design['flashcards'])"/> بطاقات مراجعة ومسرد ثنائي اللغة</li>
           <li><i class="fa fa-book" aria-hidden="true"/> <t t-esc="len(channel.nova_landing['references'])"/> مراجع رسمية للتعمّق</li>
           <li><i class="fa fa-trophy" aria-hidden="true"/> نقاط خبرة عند اجتياز الاختبارات</li>
           <li><i class="fa fa-unlock" aria-hidden="true"/> تسجيل مجاني ومفتوح للجميع</li>

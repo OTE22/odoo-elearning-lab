@@ -28,6 +28,8 @@ const BLOCKS = {
     "خطأ شائع": "pitfall",
     "خلاصة الدرس": "takeaway",
     "اختبر فهمك": "check",
+    "قراءة موجهة": "reading",
+    "تقييم المشروع من عشر درجات": "rubric",
 };
 const REVEALS = {
     "قارن طريقتك": "قارن طريقتك — اكشفها بعد إنجاز المهمة",
@@ -35,11 +37,29 @@ const REVEALS = {
 };
 const ARTICLES = 'div[dir="rtl"][lang="ar"]';
 
+// "<p><strong>الهدف (متقدم)</strong> …</p>" becomes a banner with a level chip.
+function markObjective(article) {
+    const lead = [...article.querySelectorAll(":scope > p")].find((p) => {
+        const first = p.firstElementChild;
+        return first && first.tagName === "STRONG" && first.textContent.trim().startsWith("الهدف");
+    });
+    if (!lead) {
+        return;
+    }
+    const level = (lead.firstElementChild.textContent.match(/\(([^)]+)\)/) || [])[1];
+    const chip = document.createElement("span");
+    chip.className = "nova-objective-chip";
+    chip.textContent = level ? `هدف الدرس · ${level}` : "هدف الدرس";
+    lead.classList.add("nova-objective");
+    lead.prepend(chip);
+}
+
 function enhance(article) {
     if (article.dataset.novaSections || !article.querySelector(":scope > h3")) {
         return;
     }
     article.dataset.novaSections = "1";
+    markObjective(article);
     for (const heading of [...article.querySelectorAll(":scope > h3")]) {
         const title = heading.textContent.trim();
         const kind = BLOCKS[title];
@@ -81,8 +101,30 @@ function restore(article) {
         }
         wrapper.replaceWith(...wrapper.childNodes);
     }
+    article.querySelectorAll(".nova-objective-chip").forEach((chip) => chip.remove());
+    article.querySelectorAll(".nova-objective").forEach((p) => {
+        p.classList.remove("nova-objective");
+        if (!p.classList.length) {
+            p.removeAttribute("class");
+        }
+    });
     delete article.dataset.novaSections;
 }
+
+// Readiness check on the course page: suggest where to start.
+document.addEventListener("click", (event) => {
+    const button = event.target.closest(".nova-ready .nova-btn");
+    if (!button) {
+        return;
+    }
+    const panel = button.closest(".nova-ready");
+    const boxes = panel.querySelectorAll('input[type="checkbox"]');
+    const ticked = [...boxes].filter((box) => box.checked).length;
+    const key = ticked === boxes.length ? "high" : ticked >= boxes.length - 2 ? "mid" : "low";
+    const count = new Intl.NumberFormat("ar").format(ticked);
+    const total = new Intl.NumberFormat("ar").format(boxes.length);
+    panel.querySelector(".nova-ready-result").textContent = `${count} من ${total} — ${panel.dataset[key]}`;
+});
 
 publicWidget.registry.NovaLessonSections = publicWidget.Widget.extend({
     selector: ".o_wslides_lesson_content_type",
